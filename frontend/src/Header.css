@@ -1,73 +1,43 @@
-.banner img {
-  background-position: center top;
-  width: 100%;
-  background-size: cover;
-  position: relative;
-  z-index: 1;
-}
-.home_row {
+.header__logo {
   display: flex;
-  z-index: 2;
-  margin-left: 5px;
-  margin-right: 5px;
-}
-.home {
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 20px;
-}
-.heading {
-  position: sticky;
-}
-.heading ul {
-  display: flex;
-  justify-content: space-evenly;
+  width: 100px;
+  object-fit: contian;
+  padding: 0 20px;
   padding-top: 20px;
-  padding-bottom: 22px;
-  
-  align-content: center;
-  text-align: center;
+  font-family: BOEING-style;
+  cursor: pointer;
+  font-size: 25px;
+}
 
+.header__logo > img {
+  height: 38px;
+}
+.header__navbar {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-style: normal;
-  font-weight: light;
-  color: rgb(23, 23, 24);
-  list-style-type: none;
+  font-size: medium;
+  color: aliceblue;
+  text-decoration: none;
+  position: right;
+  padding-right: 50px;
 }
-.heading ul li {
-  cursor: pointer;
-}
-.banner__words {
-  z-index: 8;
-  color: white;
+.header {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  background: "transparent";
+  z-index: 10;
   position: absolute;
-  bottom: 240px;
-  left: 100px;
 }
-.banner h2 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 50px;
-  padding-bottom: 50px;
-}
-.banner button {
-  background-color: transparent;
+.header__navbar li {
   display: inline-block;
-  font-size: 20px;
-  color: white;
-  border: 1px solid #fff;
-  padding: 10px 12px;
-  border-radius: 25px;
-  font-family: "Montserrat", sans-serif;
-  cursor: pointer;
-  transition: background-color ease 400ms;
+  padding: 0px 20px;
+  cursor:pointer;
+  vertical-align: top;
 }
-.banner button:hover {
-  color: rgb(241, 10, 60);
-  background: white;
-}
-.banner button p {
-  padding-left: 10px;
-  padding-right: 10px;
+.header.active {
+  background: "white";
 }
