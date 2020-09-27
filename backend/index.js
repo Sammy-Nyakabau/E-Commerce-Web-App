@@ -5,7 +5,7 @@ const port = process.env.PORT || 3000;
 
 
 require("./startup/cors")(app);
-// require("./startup/routes")(app);
+require("./startup/routes")(app);
 require("./startup/db")();
 
 

@@ -29,11 +29,13 @@ const productsSchema = new mongoose.Schema({
   rating: {
     type: Number,
   },
-  reviews: {
+  'number of reviews': {
     type: Number,
   },
 });
 
-const Product = mongoose.model("Products", productsSchema);
+productsSchema.set('collection', 'Products');
 
-exports.Product = Product;
+const Products = mongoose.model("Products", productsSchema);
+
+exports.Products = Products;

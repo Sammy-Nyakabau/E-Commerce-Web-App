@@ -1,10 +1,14 @@
-const express = require('express');
-//add routes specific to project here 
-const auth = require('../routes/auth');
-const error = require('../middleware/error');
+const express = require("express");
+//add routes specific to project here
+// const auth = require('../routes/auth');
+const products = require("../routes/products");
+const categories = require("../routes/categories");
+const error = require("../middleware/error");
 
-module.exports = function(app) {
+module.exports = function (app) {
   app.use(express.json());
-  app.use('/api/auth', auth);
+  // app.use('/api/auth', auth);
+  app.use("/api/products", products);
+  app.use("/api/categories", categories);
   app.use(error);
-}
+};
