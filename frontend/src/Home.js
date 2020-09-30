@@ -1,6 +1,7 @@
 import React from "react";
 import "./Home.css";
 import Categories from "./Categories";
+import Scrollspy from 'react-scrollspy'
 
 function Home() {
   return (
@@ -15,15 +16,9 @@ function Home() {
             </button>
           </div>
         </div>
-        <div className="heading">
-          <ul>
-            <li>Helicopters</li>
-            <li>Aircraft</li>
-            <li>Unmanned Aerial Systems</li>
-            <li>Jet planes</li>
-          </ul>
-        </div>
+        
         <div className="home__row">
+        
           <Categories />
         </div>
       </div>
