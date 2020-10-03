@@ -1,5 +1,4 @@
 const express = require("express");
-const { get } = require("lodash");
 const debug = require("debug")("app:startup");
 const app = express();
 const port = process.env.PORT || 5000;
