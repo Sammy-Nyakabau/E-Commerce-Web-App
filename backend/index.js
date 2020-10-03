@@ -4,6 +4,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 require("./startup/cors")(app);
+require("./startup/passport")(app);
 require("./startup/routes")(app);
 require("./startup/db")();
 
