@@ -1,9 +1,11 @@
 const passport = require("passport");
+const logger = require("../startup/logger");
 const session = require("express-session");
 const authDebugger = require("debug")("app:auth");
 const LocalStrategy = require("passport-local");
 const bcrypt = require("bcrypt");
 const { User } = require('../models/users');
+const ObjectID = require("mongodb").ObjectID;
 
 module.exports = function (app) {
   app.use(

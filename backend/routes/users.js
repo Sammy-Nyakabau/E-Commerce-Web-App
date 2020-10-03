@@ -3,6 +3,7 @@ const bcrypt = require("bcrypt");
 const _ = require("lodash");
 const { User } = require("../models/users");
 const express = require("express");
+const passport = require("passport");
 const router = express.Router();
 
 router.get("/me", auth, async (req, res) => {
@@ -10,7 +11,8 @@ router.get("/me", auth, async (req, res) => {
   res.send(user);
 });
 
-router.post("/", async (req, res) => {
+//register
+router.post("/register", async (req, res) => {
   let user = await User.findOne({ email: req.body.email });
   if (user) return res.status(400).send("User already registered.");
 
@@ -21,5 +23,15 @@ router.post("/", async (req, res) => {
 
   res.send(_.pick(user, ["_id", "username", "email"]));
 });
+
+router.post(
+  "/login",
+  passport.authenticate("local", {
+    failureRedirect: "/",
+  }),
+  (req, res) => {
+    res.redirect("/api/users/me");
+  }
+);
 
 module.exports = router;
