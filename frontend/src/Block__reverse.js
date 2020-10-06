@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import "./Block__reverse.css"
 
