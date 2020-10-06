@@ -5,21 +5,27 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     minlength: 2,
-    maxlength: 50
+    maxlength: 50,
   },
   email: {
     type: String,
     required: true,
     minlength: 5,
     maxlength: 255,
-    unique: true
+    unique: true,
   },
   password: {
     type: String,
     required: true,
     minlength: 5,
-    maxlength: 1024
-  }
+    maxlength: 1024,
+  },
+  shippingAddress: {
+    address: { type: String, required: false },
+    city: { type: String, required: false },
+    postalCode: { type: String, required: false },
+    country: { type: String, required: false },
+  },
 });
 
 const User = mongoose.model("User", userSchema);
