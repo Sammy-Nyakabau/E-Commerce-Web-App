@@ -34,4 +34,24 @@ router.post(
   }
 );
 
+router.put("/:id", async (req, res) => {
+  const { username, email, shippingAddress } = req.body;
+  const user = await User.findByIdAndUpdate(
+    req.params.id,
+    {
+      username,
+      email,
+      shippingAddress,
+    },
+    {
+      new: true,
+    }
+  );
+
+  if (!user)
+    return res.status(404).send("The user with the given ID was not found.");
+
+  res.send(user);
+});
+
 module.exports = router;

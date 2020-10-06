@@ -21,10 +21,10 @@ const userSchema = new mongoose.Schema({
     maxlength: 1024,
   },
   shippingAddress: {
-    address: { type: String, required: false },
-    city: { type: String, required: false },
-    postalCode: { type: String, required: false },
-    country: { type: String, required: false },
+    address: { type: String, required: false, default: "" },
+    city: { type: String, required: false, default: "" },
+    postalCode: { type: String, required: false, default: "" },
+    country: { type: String, required: false, default: "" },
   },
 });
 
