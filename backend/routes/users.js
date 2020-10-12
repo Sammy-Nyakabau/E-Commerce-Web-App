@@ -7,8 +7,7 @@ const passport = require("passport");
 const router = express.Router();
 
 router.get("/me", auth, async (req, res) => {
-  const user = await User.findById(req.user._id).select("-password");
-  res.send(user);
+  res.send(req.user);
 });
 
 //register
