@@ -1,7 +1,8 @@
 import React from "react";
 import "./Home.css";
-import Categories from "./Categories";
-import Scrollspy from 'react-scrollspy'
+import Categories from "./Home_components/Categories";
+import {Link} from 'react-router-dom';
+
 
 function Home() {
   return (
@@ -11,9 +12,11 @@ function Home() {
           <img src="https://www.leonardocompany.com/o/adaptive-media/image/10059482/h_703/Banner%20Aria%201440x760.jpg?t=1583315858025" />
           <div className="banner__words">
             <h2>Air: flying solutions for multiple missions</h2>
+            
             <button>
               <p>All Products</p>
             </button>
+            
           </div>
         </div>
         
@@ -22,7 +25,7 @@ function Home() {
           <Categories />
         </div>
       </div>
-    </div>
+      </div>
   );
 }
 

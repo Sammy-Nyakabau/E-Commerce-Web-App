@@ -1,0 +1,28 @@
+.block__reverse > img {
+  width: 700px;
+  height: 720px;
+}
+
+.block__reverse {
+  display: flex;
+  flex-direction: row-reverse;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin: auto;
+  font-family: HelveticaNeue;
+  font-style: normal;
+  font-weight: light;
+  font-size: 25px;
+  line-height: 45px;
+
+  text-align: right;
+
+  color: #000000;
+}
+.block__description {
+  margin: auto;
+  padding-right: 80px;
+}
+.block__name {
+  margin-bottom: 20px;
+}
