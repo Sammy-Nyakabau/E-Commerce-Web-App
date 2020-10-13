@@ -6,11 +6,16 @@ const express = require("express");
 const passport = require("passport");
 const router = express.Router();
 
+// @desc    Get user details
+// @route   GET /api/users
+// @access  Private
 router.get("/me", auth, async (req, res) => {
   res.send(req.user);
 });
 
-//register
+// @desc    Create new user
+// @route   POST /api/users
+// @access  Private
 router.post("/register", async (req, res) => {
   let user = await User.findOne({ email: req.body.email });
   if (user) return res.status(400).send("User already registered.");
@@ -23,6 +28,9 @@ router.post("/register", async (req, res) => {
   res.send(_.pick(user, ["_id", "username", "email"]));
 });
 
+// @desc    Log in User
+// @route   POST /api/users
+// @access  Private
 router.post(
   "/login",
   passport.authenticate("local"),
@@ -31,6 +39,9 @@ router.post(
   }
 );
 
+// @desc    Update User details
+// @route   PUT /api/users
+// @access  Private
 router.put("/:id", async (req, res) => {
   const { username, email, shippingAddress } = req.body;
   const user = await User.findByIdAndUpdate(
