@@ -7,7 +7,6 @@ function Header() {
     <div className="header">
       <div className="header__logo">
         <p>AVIATO</p>
-        <img src="https://pngimg.com/uploads/jet_fighter/jet_fighter_PNG34.png" />
       </div>
       <div className="header__navbar">
         <ul>

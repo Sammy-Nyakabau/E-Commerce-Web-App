@@ -2,11 +2,11 @@
   display: flex;
   width: 100px;
   object-fit: contian;
-  padding: 0 20px;
-  padding-top: 20px;
+  padding: 0 50px;
   font-family: BOEING-style;
   cursor: pointer;
-  font-size: 25px;
+  font-size: 28px;
+  color: aliceblue;
 }
 
 .header__logo > img {

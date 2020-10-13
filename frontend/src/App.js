@@ -5,15 +5,16 @@ import Home from "./Home";
 import Footer from "./Footer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Product from "./Product";
+import Checkout from "./Checkout";
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Switch>
-          <Route path="/product">
+          <Route path="/checkout">
             <Header />
-            <Product />
+            <Checkout />
           </Route>
           <Route path="/">
             <Header />
