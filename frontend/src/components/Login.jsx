@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import "../styles/Login.css";
 import { login } from "../services/authService";
-import { getUser } from "../services/userService";
 import { useHistory } from "react-router-dom";
 
 function Login() {
