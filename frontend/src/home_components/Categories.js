@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import "./Categories.css";
 import Block from "./Block";
