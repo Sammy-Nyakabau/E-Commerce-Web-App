@@ -1,31 +1,32 @@
 /* eslint-disable */
 import React, { useState } from "react";
 import "../styles/Login.css";
-import auth from "../services/authService";
-import { Link, useHistory } from "react-router-dom";
+import { login } from "../services/authService";
+import { getUser } from "../services/userService";
+import { useHistory } from "react-router-dom";
 
 function Login() {
   const history = useHistory();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const signIn = (e) => {
+  const signIn = async (e) => {
     e.preventDefault();
-    auth.login(username, password)
 
-  }
-
+    try {
+      const data = await login(username, password);
+      if (data) {
+        history.push("/");
+      }
+    } catch (ex) {
+      if (ex.response && ex.response.status === 400) {
+        console.log(ex);
+      }
+    }
+  };
 
   return (
     <div className="login">
-      <Link to="/">
-        <p>AVIATO</p>
-        <img
-          className="login__logo"
-          src="https://pngimg.com/uploads/jet_fighter/jet_fighter_PNG34.png"
-        />
-      </Link>
-
       <div className="login__container">
         <h1>Sign-in</h1>
 
@@ -53,12 +54,9 @@ function Login() {
           </button>
         </form>
 
-        <p>
-          By signing-in you agree to the Aviato's Conditions of Use &
-          Sale. 
-        </p>
+        <p>By signing-in you agree to the Aviato's Conditions of Use & Sale.</p>
 
-        <button onClick={} className="login__registerButton">
+        <button className="login__registerButton">
           Create your Aviato Account
         </button>
       </div>

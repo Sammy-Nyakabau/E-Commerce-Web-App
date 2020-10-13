@@ -25,9 +25,7 @@ router.post("/register", async (req, res) => {
 
 router.post(
   "/login",
-  passport.authenticate("local", {
-    failureRedirect: "/",
-  }),
+  passport.authenticate("local"),
   (req, res) => {
     res.redirect("/api/users/me");
   }

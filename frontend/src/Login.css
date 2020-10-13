@@ -1,4 +1,5 @@
 .login {
+    padding-top: 1.2rem;
     background-color: white;
     height: 100vh;
     display: flex;
@@ -47,13 +48,13 @@
     border-color: #132D78;
     cursor: pointer;
   }
-  
+
   .login__registerButton {
     border-radius: 2px;
     width: 100%;
     height: 30px;
     border: 1px solid;
     margin-top: 10px;
-    cursor: pointer;
     border-color: darkgray;
+    background-color: white;
   }

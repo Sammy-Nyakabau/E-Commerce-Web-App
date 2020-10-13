@@ -8,10 +8,6 @@ require("./startup/passport")(app);
 require("./startup/routes")(app);
 require("./startup/db")();
 
-app.get("/", (req, res) => {
-  res.send('hello world')
-})
-
 const server = app.listen(port, () =>
   debug(`App listening at http://localhost:${port}`)
 );
