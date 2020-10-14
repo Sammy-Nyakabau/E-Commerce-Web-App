@@ -1,7 +1,11 @@
 import React, { Component } from "react";
+import { Container } from 'react-bootstrap';
+import Header from '../Header';
+import Footer from '../Footer';
+import ProductList from './ProductList';
 import { getProducts } from "../services/productService";
 import {
-  getAircraft,
+getAircraft,
   getHelicopters,
   getJetLiners,
   getUnmannedAerialSystems,
@@ -34,8 +38,20 @@ class Shop extends Component {
   }
 
   render() {
-    return <h1>Shop</h1>;
+    console.log(this.state);
+
+    return (
+      <div>
+        <Header />
+        <Container id="content">
+          <ProductList
+            products={this.state.products} />
+        </Container>
+        <Footer />
+      </div>
+    );
   }
 }
+
 
 export default Shop;
