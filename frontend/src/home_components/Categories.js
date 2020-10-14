@@ -14,7 +14,7 @@ function Categories() {
               "Helicpters",
               "Aircraft",
               "Unmanned Aerial Systems",
-              "Airborne Systems",
+              "Jet Liners",
             ]}
             currentClassName="is-current"
           >
@@ -29,7 +29,7 @@ function Categories() {
               <a href="#Unmanned Aerial Systems">Unmanned Aerial Systems</a>
             </li>
             <li>
-              <a href="#Airborne Systems">Airborne Systems</a>
+              <a href="#Jet Liners">Jet Liners</a>
             </li>
             </ul>
           </Scrollspy>
@@ -58,11 +58,11 @@ function Categories() {
             description="We deliver full end-to-end UAS solutions - embracing platforms, sensors, mission system and ground control - for tactical ISTAR applications. Our portfolio includes tactical rotary and fixed wing UAS, optionally piloted helicopter, fully equipped with sensors and networked capability."
           />
         </section>
-        <section id="Airborne Systems">
+        <section id="Jet Liners">
           <Block__reverse
-            imgUrl="https://www.leonardocompany.com/o/adaptive-media/image/854015/w_720/captor-e-aesa-radar--photo%203.jpg?t=1541596109540"
-            Name="Airborne Systems"
-            description="We provide airborne solutions that range from components through to full ISR/ISTAR, airborne sensors and effectors that operate across the full electromagnetic spectrum. Our solutions leverage proprietary sensor technology, driven by constant innovation."
+            imgUrl="https://images.unsplash.com/photo-1474302770737-173ee21bab63?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+            Name="Jet Liners"
+            description="We deliver the best in class private jet liners thanks to our collabarations with major firms like Boeing, Airbus, Finmeccanica, Augusta Westland. Our aircraft include the best in safety and leisure features ensuring an impeccable experience. "
           />
         </section>
       </div>
