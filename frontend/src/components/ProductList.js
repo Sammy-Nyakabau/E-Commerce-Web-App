@@ -1,13 +1,13 @@
 import React from 'react';
-import Product from './Product';
+import Product_component from './Product_component';
 
 class ProductList extends React.Component {
   render() {
     return (
-      <div>
+      <div className="ProductList">
         {
           this.props.products.map(product => (
-            <Product
+            <Product_component
               key={product.id}
               product={product} />
           ))

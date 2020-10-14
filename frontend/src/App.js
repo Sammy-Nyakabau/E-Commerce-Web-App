@@ -20,7 +20,9 @@ function App() {
             <Footer/>
           </Route>
           <Route path="/shop">
+            <Header/>
             <Shop/>
+            <Footer/>
           </Route>
           <Route path="/login">
             <Login />

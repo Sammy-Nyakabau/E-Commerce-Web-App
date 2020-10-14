@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Container } from 'react-bootstrap';
-import Header from '../Header';
-import Footer from '../Footer';
+import "./Shop.css"
 import ProductList from './ProductList';
 import { getProducts } from "../services/productService";
 import {
@@ -42,12 +41,13 @@ class Shop extends Component {
 
     return (
       <div>
-        <Header />
+        <div className="shop_banner">
+        <img src="https://s2.best-wallpaper.net/wallpaper/1920x1080/1804/Sukhoi-Su-30-military-aircraft-man-black-background_1920x1080.jpg" />  
+        </div>
         <Container id="content">
           <ProductList
             products={this.state.products} />
         </Container>
-        <Footer />
       </div>
     );
   }
