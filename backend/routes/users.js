@@ -35,7 +35,7 @@ router.post(
   "/login",
   passport.authenticate("local"),
   (req, res) => {
-    res.redirect("/api/users/me");
+    res.send(req.user);
   }
 );
 
