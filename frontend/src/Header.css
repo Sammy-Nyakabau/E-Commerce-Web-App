@@ -41,7 +41,7 @@
 .header.active {
   background: "white";
 }
-.shopping {
+.basket {
   font-size: 20px;
   display: flex;
   align-items: center;

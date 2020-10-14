@@ -23,7 +23,7 @@ function Header() {
           </li>
           
           <li>
-          <div className="shopping">
+          <div className="basket">
             <ShoppingBasketIcon />
             <span className="basketCount">0</span>
             </div>
