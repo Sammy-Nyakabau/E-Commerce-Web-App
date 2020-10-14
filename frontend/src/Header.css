@@ -41,3 +41,12 @@
 .header.active {
   background: "white";
 }
+.shopping {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+.basketCount {
+  margin-left: 10px;
+  margin-right: 10px;
+}

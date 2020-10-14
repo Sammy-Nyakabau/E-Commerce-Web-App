@@ -1,7 +1,7 @@
 import React from "react";
-import SearchIcon from '@material-ui/icons/Search';
-import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
-import PersonIcon from '@material-ui/icons/Person';
+import SearchIcon from "@material-ui/icons/Search";
+import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
+import PersonIcon from "@material-ui/icons/Person";
 import "./Header.css";
 
 function Header() {
@@ -13,20 +13,22 @@ function Header() {
       <div className="header__navbar">
         <ul>
           <li>
-            <span className="explore">EXPLORE</span>
+            <SearchIcon />
           </li>
           <li>
             <span className="shop">SHOP</span>
           </li>
           <li>
-            <ShoppingBasketIcon/>
+            <PersonIcon />
           </li>
+          
           <li>
-            <PersonIcon/>
+          <div className="shopping">
+            <ShoppingBasketIcon />
+            <span className="basketCount">0</span>
+            </div>
           </li>
-          <li>
-              <SearchIcon />
-          </li>
+          
         </ul>
       </div>
     </div>
