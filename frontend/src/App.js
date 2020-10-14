@@ -5,6 +5,7 @@ import Home from "./Home";
 import Footer from "./Footer";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import Shop from "./components/Shop";
 import Checkout from "./Checkout";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -16,6 +17,9 @@ function App() {
           <Route path="/checkout">
             <Header />
             <Checkout />
+          </Route>
+          <Route path="/shop">
+            <Shop/>
           </Route>
           <Route path="/login">
             <Login />
