@@ -10,6 +10,7 @@ import Checkout from "./Checkout";
 import Shop_helicopters from "./components/Shop_helicopters";
 import Shop_aircrafts from "./components/Shop_aircrafts";
 import Shop_jetLiners from "./components/Shop_jetLiners";
+import Shop_unmannedAerialSystems from "./components/Shop_unmannedAerialSystems"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -32,6 +33,11 @@ function App() {
             <Shop_helicopters />
             <Footer />
           </Route>
+          <Route path="/shop_unmannedAerialSystems">
+            <Header />
+            <Shop_unmannedAerialSystems />
+            <Footer />
+            </Route>
           <Route path="/shop_jetliners">
             <Header />
             <Shop_jetLiners />

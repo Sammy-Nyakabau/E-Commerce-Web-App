@@ -71,7 +71,7 @@ class Shop extends Component {
             </Link>
             </ul>
         </div>
-        <ProductList_jetLiners jetLiners={this.state.jetLiners} />
+        <ProductList_jetLiners helicopters={this.state.jetLiners} />
       </div>
     );
   }

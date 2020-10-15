@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Shop.css";
-import ProductList_helicopters from "./ProductList_helicopters";
+import ProductList_unmannedAerialSystems from "./ProductList_unmannedAerialSystems";
 import { getProducts } from "../services/productService";
 import {Link} from 'react-router-dom';
 import {
@@ -61,7 +61,7 @@ class Shop extends Component {
             </Link>
             <Link to="/shop_unmannedAerialSystems">
             <li>
-              <a href="#Unmanned Aerial Systems">Unmanned Aerial Systems</a>
+              <a href="#unmannedAerialSystems">Unmanned Aerial Systems</a>
             </li>
             </Link>
             <Link to="/shop_jetliners">
@@ -71,7 +71,7 @@ class Shop extends Component {
             </Link>
             </ul>
         </div>
-        <ProductList_helicopters helicopters={this.state.helicopters} />
+        <ProductList_unmannedAerialSystems unmannedAerialSystems={this.state.unmannedAerialSystems} />
       </div>
     );
   }
