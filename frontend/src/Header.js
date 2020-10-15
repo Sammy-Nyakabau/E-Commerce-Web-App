@@ -2,6 +2,7 @@ import React from "react";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import PersonIcon from "@material-ui/icons/Person";
+import BookmarksIcon from "@material-ui/icons/Bookmarks";
 import "./Header.css";
 
 function Header() {
@@ -21,14 +22,15 @@ function Header() {
           <li>
             <PersonIcon />
           </li>
-          
           <li>
-          <div className="basket">
-            <ShoppingBasketIcon />
-            <span className="basketCount">0</span>
+            <BookmarksIcon />
+          </li>
+          <li>
+            <div className="basket">
+              <ShoppingBasketIcon />
+              <span className="basketCount">0</span>
             </div>
           </li>
-          
         </ul>
       </div>
     </div>

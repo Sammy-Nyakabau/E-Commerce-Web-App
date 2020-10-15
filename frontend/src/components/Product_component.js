@@ -6,6 +6,7 @@ function Product_component(props) {
       product
     } = props;
   return (
+      <div className="col s4">
     <div className="product">
       <div className="product_info">
         <p>{product.name}</p>
@@ -23,6 +24,7 @@ function Product_component(props) {
       />
 
       <button>Add to basket</button>
+    </div>
     </div>
   );
 }

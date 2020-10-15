@@ -1,3 +1,13 @@
-.ProductList{
-    display: flex;
+.home {
+    max-width: 1500px;
+    margin: 0px auto;
 }
+.home_row {
+    
+    display: flex;
+    z-index: 1;
+    margin: 0px 5px;
+    flex-wrap: wrap;
+    margin: 0px auto;
+    justify-content: center;
+} 

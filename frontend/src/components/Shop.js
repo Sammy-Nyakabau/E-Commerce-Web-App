@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Container } from 'react-bootstrap';
 import "./Shop.css"
 import ProductList from './ProductList';
 import { getProducts } from "../services/productService";
@@ -40,14 +39,15 @@ class Shop extends Component {
     console.log(this.state);
 
     return (
-      <div>
+      <div className="shop">
         <div className="shop_banner">
         <img src="https://s2.best-wallpaper.net/wallpaper/1920x1080/1804/Sukhoi-Su-30-military-aircraft-man-black-background_1920x1080.jpg" />  
         </div>
-        <Container id="content">
+        <div className="shop_banner_heading">
+          <h1>SHOP</h1>
+        </div>
           <ProductList
             products={this.state.products} />
-        </Container>
       </div>
     );
   }
