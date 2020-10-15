@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Shop.css";
-import ProductList_jetLiners from "./ProductList_jetLiners";
+import ProductList_aircrafts from "./ProductList_aircrafts";
 import { getProducts } from "../services/productService";
 import {Link} from 'react-router-dom';
 import {
@@ -71,7 +71,7 @@ class Shop extends Component {
             </Link>
             </ul>
         </div>
-        <ProductList_jetLiners jetLiners={this.state.jetLiners} />
+        <ProductList_aircrafts aircrafts={this.state.aircrafts} />
       </div>
     );
   }

@@ -55,15 +55,21 @@ class Shop extends Component {
               <a href="#Helicpters">Helicopters</a>
             </li>
             </Link>
+            <Link to="/shop_aircrafts">
             <li>
               <a href="#Aircraft">Aircraft</a>
             </li>
+            </Link>
+            <Link to="/shop_unmanned Aerial Systems">
             <li>
               <a href="#Unmanned Aerial Systems">Unmanned Aerial Systems</a>
             </li>
+            </Link>
+            <Link to="/shop_jetliners">
             <li>
               <a href="#Jet Liners">Jet Liners</a>
             </li>
+            </Link>
             </ul>
         </div>
           <ProductList
