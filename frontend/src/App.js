@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./Header";
 import Home from "./Home";
 import Footer from "./Footer";
+import Footer_dark from "./Footer_dark";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Shop from "./components/Shop";
@@ -26,27 +27,27 @@ function App() {
           <Route path="/shop">
             <Header />
             <Shop />
-            <Footer />
+            <Footer_dark />
           </Route>
           <Route path="/shop_helicopters">
             <Header />
             <Shop_helicopters />
-            <Footer />
+            <Footer_dark />
           </Route>
           <Route path="/shop_unmannedAerialSystems">
             <Header />
             <Shop_unmannedAerialSystems />
-            <Footer />
+            <Footer_dark />
             </Route>
           <Route path="/shop_jetliners">
             <Header />
             <Shop_jetLiners />
-            <Footer />
+            <Footer_dark />
           </Route>
           <Route path="/shop_aircrafts">
             <Header />
             <Shop_aircrafts />
-            <Footer />
+            <Footer_dark />
           </Route>
           <Route path="/login">
             <Login />
