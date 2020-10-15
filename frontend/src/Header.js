@@ -17,7 +17,7 @@ function Header() {
             <SearchIcon />
           </li>
           <li>
-            <span className="shop">SHOP</span>
+            <span>SHOP</span>
           </li>
           <li>
             <PersonIcon />

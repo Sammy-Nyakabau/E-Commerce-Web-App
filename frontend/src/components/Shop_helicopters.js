@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import "./Shop.css"
-import ProductList from './ProductList';
+import "./Shop.css";
+import ProductList_helicopters from "./ProductList_helicopters";
 import { getProducts } from "../services/productService";
 import {Link} from 'react-router-dom';
-
 import {
-getAircraft,
+  getAircraft,
   getHelicopters,
   getJetLiners,
   getUnmannedAerialSystems,
@@ -43,7 +42,7 @@ class Shop extends Component {
     return (
       <div className="shop">
         <div className="shop_banner">
-        <img src="https://s2.best-wallpaper.net/wallpaper/1920x1080/1804/Sukhoi-Su-30-military-aircraft-man-black-background_1920x1080.jpg" />  
+          <img src="https://s2.best-wallpaper.net/wallpaper/1920x1080/1804/Sukhoi-Su-30-military-aircraft-man-black-background_1920x1080.jpg" />
         </div>
         <div className="shop_banner_heading">
           <h1>SHOP</h1>
@@ -51,9 +50,9 @@ class Shop extends Component {
         <div className="shop_bar">
           <ul>
             <Link to="/shop_helicopters">
-            <li>
-              <a href="#Helicpters">Helicopters</a>
-            </li>
+              <li>
+                <a href="#Helicpters">Helicopters</a>
+              </li>
             </Link>
             <li>
               <a href="#Aircraft">Aircraft</a>
@@ -64,14 +63,12 @@ class Shop extends Component {
             <li>
               <a href="#Jet Liners">Jet Liners</a>
             </li>
-            </ul>
+          </ul>
         </div>
-          <ProductList
-            products={this.state.products} />
+        <ProductList_helicopters helicopters={this.state.helicopters} />
       </div>
     );
   }
 }
-
 
 export default Shop;

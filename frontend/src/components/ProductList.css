@@ -1,11 +1,12 @@
 .home {
     max-width: 1500px;
     margin: 0px auto;
+    z-index: 10;
 }
 .home_row {
     
     display: flex;
-    z-index: 1;
+    z-index: 10;
     margin: 0px 5px;
     flex-wrap: wrap;
     margin: 0px auto;

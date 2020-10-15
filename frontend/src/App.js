@@ -7,6 +7,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Shop from "./components/Shop";
 import Checkout from "./Checkout";
+import Shop_helicopters from "./components/Shop_helicopters";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -17,12 +18,17 @@ function App() {
           <Route path="/checkout">
             <Header />
             <Checkout />
-            <Footer/>
+            <Footer />
           </Route>
           <Route path="/shop">
-            <Header/>
-            <Shop/>
-            <Footer/>
+            <Header />
+            <Shop />
+            <Footer />
+          </Route>
+          <Route path="/shop_helicopters">
+            <Header />
+            <Shop_helicopters />
+            <Footer />
           </Route>
           <Route path="/login">
             <Login />

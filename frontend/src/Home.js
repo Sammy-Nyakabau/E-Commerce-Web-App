@@ -13,11 +13,11 @@ function Home() {
           <img src="https://www.leonardocompany.com/o/adaptive-media/image/10059482/h_703/Banner%20Aria%201440x760.jpg?t=1583315858025" />
           <div className="banner__words">
             <h2>Air: flying solutions for multiple missions</h2>
-            
+            <Link to="/shop">
             <button>
               <p>All Products</p>
             </button>
-            
+            </Link>
           </div>
         </div>
         
