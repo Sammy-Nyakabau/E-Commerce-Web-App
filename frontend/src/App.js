@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import "./App.css";
 import Header from "./Header";
@@ -10,7 +11,7 @@ import Shop from "./components/Shop";
 import Checkout from "./Checkout";
 import Shop_helicopters from "./components/Shop_helicopters";
 import Shop_aircrafts from "./components/Shop_aircrafts";
-import Shop_jetLiners from "./components/Shop_jetLiners";
+import Shop_jetLiners from "./components/Shop_jetliners";
 import Shop_unmannedAerialSystems from "./components/Shop_unmannedAerialSystems"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
