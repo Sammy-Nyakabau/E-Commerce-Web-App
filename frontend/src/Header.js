@@ -4,13 +4,17 @@ import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import PersonIcon from "@material-ui/icons/Person";
 import BookmarksIcon from "@material-ui/icons/Bookmarks";
 import "./Header.css";
+import {Link} from 'react-router-dom';
+
 
 function Header() {
   return (
     <div className="header">
+      <Link to="/">
       <div className="header__logo">
         <p>AVIATO</p>
       </div>
+      </Link>
       <div className="header__navbar">
         <ul>
           <li>
