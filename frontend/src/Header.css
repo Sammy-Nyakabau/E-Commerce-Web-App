@@ -42,11 +42,12 @@
   background: "white";
 }
 .basket {
-  font-size: 20px;
+  font-size: 10px;
   display: flex;
   
 }
 .basketCount {
-  margin-left: 10px;
-  margin-right: 10px;
+  position: relative;
+  bottom:6px;
+  right:7px;
 }
