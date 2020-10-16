@@ -14,6 +14,7 @@ import Shop_aircrafts from "./components/Shop_aircrafts";
 import Shop_jetLiners from "./components/Shop_jetliners";
 import Shop_unmannedAerialSystems from "./components/Shop_unmannedAerialSystems"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+// import User from "./User";
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
             <Shop />
             <Footer_dark />
           </Route>
+         
           <Route path="/shop_helicopters">
             <Header />
             <Shop_helicopters />

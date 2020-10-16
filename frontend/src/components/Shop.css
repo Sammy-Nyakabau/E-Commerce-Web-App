@@ -56,3 +56,27 @@
   .shop_bar a:hover{
     color:rgb(116, 40, 65);
   }
+
+  input[type=text] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid white;
+    color:white;
+    background: transparent;
+  }
+  .Shop_input {
+    z-index: 8;
+    color: lightgrey;
+    position: absolute;
+    width:50%;
+    top: 300px;
+    left: 63%;
+  transform: translate(-50%, -50%);
+    
+    
+    font-family: "Montserrat", sans-serif;
+    font-size: 30px;
+  }

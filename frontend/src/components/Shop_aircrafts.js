@@ -50,6 +50,9 @@ class Shop extends Component {
         <div className="shop_banner_heading">
           <h1>SHOP</h1>
         </div>
+        <div className="Shop_input">
+            <input type="text" id="fname" name="fname" placeholder="Search"/>
+          </div>
         <div className="shop_bar">
         <ul>
             <Link to="/shop_helicopters">

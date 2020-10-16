@@ -1,0 +1,68 @@
+html {
+    font-family: GillSans, Calibri, Trebuchet, sans-serif;
+ }
+.user{
+    position:relative;
+}
+.user_banner {
+    width: 100%;
+    z-index: -1;
+    margin-bottom: -150px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 30px;
+   
+  }
+  .user_banner img {
+    width:100%;
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1),
+    80%,
+    rgba(0, 0, 0, 0)
+  );
+}
+  .user_banner_heading {
+    z-index: 8;
+    color: lightgrey;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .user_product {
+    font-family: "Montserrat", sans-serif;
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    background-color: lightgrey;
+    align-items: center;
+    border-radius: 10px;
+    opacity:0.95;
+    justify-content: flex-end;
+    margin: auto;
+    padding: 20px;
+    max-height: 400px;
+    min-width: 100px;
+    width:50%;
+
+    position:absolute;
+    top: 350px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1),
+    80%,
+    rgba(0, 0, 0, 1)
+    );
+  }
+  .user_product_info{
+    height:100px;
+    margin-bottom: 15px;
+}
+.user_total{
+    margin-top: 5px;
+}
