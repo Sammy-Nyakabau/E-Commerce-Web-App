@@ -3,18 +3,37 @@ import React, { useState } from "react";
 import "../styles/Login.css";
 import { login } from "../services/authService";
 import { useHistory } from "react-router-dom";
+import { useStateValue } from "../providers/StateProvider";
+import { Link } from "react-router-dom";
 
 function Login() {
   const history = useHistory();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [{}, dispatch] = useStateValue();
 
   const signIn = async (e) => {
     e.preventDefault();
 
     try {
-      const data = await login(username, password);
-      if (data) {
+      const { data: user } = await login(username, password);
+      console.log(user);
+
+      if (user) {
+        // the user just logged in / the user was logged in
+
+        dispatch({
+          type: "SET_USER",
+          user: user,
+        });
+      } else {
+        // the user is logged out
+        dispatch({
+          type: "SET_USER",
+          user: null,
+        });
+      }
+      if (user) {
         history.push("/");
       }
     } catch (ex) {
@@ -54,10 +73,11 @@ function Login() {
         </form>
 
         <p>By signing-in you agree to the Aviato's Conditions of Use & Sale.</p>
-
-        <button className="login__registerButton">
-          Create your Aviato Account
-        </button>
+        <Link to="/register">
+          <button className="login__registerButton">
+            Create your Aviato Account
+          </button>
+        </Link>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 const passport = require("passport");
+const cookieParser = require("cookie-parser");
 const logger = require("../startup/logger");
 const session = require("express-session");
 const authDebugger = require("debug")("app:auth");
@@ -16,6 +17,7 @@ module.exports = function (app) {
     })
   );
 
+  app.use(cookieParser("aviato"));
   app.use(passport.initialize());
   app.use(passport.session());
 

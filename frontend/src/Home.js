@@ -2,8 +2,7 @@
 import React from "react";
 import "./Home.css";
 import Categories from "./home_components/Categories";
-import {Link} from 'react-router-dom';
-
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -14,19 +13,18 @@ function Home() {
           <div className="banner__words">
             <h2>Air: flying solutions for multiple missions</h2>
             <Link to="/shop">
-            <button>
-              <p>All Products</p>
-            </button>
+              <button>
+                <p>All Products</p>
+              </button>
             </Link>
           </div>
         </div>
-        
+
         <div className="home__row">
-        
           <Categories />
         </div>
       </div>
-      </div>
+    </div>
   );
 }
 

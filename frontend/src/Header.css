@@ -9,6 +9,10 @@
   color: aliceblue;
 }
 
+.header__text {
+  color: white;
+}
+
 .header__logo > img {
   height: 38px;
 }

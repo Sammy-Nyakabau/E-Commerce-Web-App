@@ -9,7 +9,7 @@ const router = express.Router();
 // @desc    Get user details
 // @route   GET /api/users
 // @access  Private
-router.get("/me", auth, async (req, res) => {
+router.get("/me",(req, res) => {
   res.send(req.user);
 });
 
@@ -25,7 +25,7 @@ router.post("/register", async (req, res) => {
   user.password = await bcrypt.hash(user.password, salt);
   await user.save();
 
-  res.send(_.pick(user, ["_id", "username", "email"]));
+  res.send(user);
 });
 
 // @desc    Log in User
@@ -38,6 +38,11 @@ router.post(
     res.send(req.user);
   }
 );
+
+router.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/');
+});
 
 // @desc    Update User details
 // @route   PUT /api/users
