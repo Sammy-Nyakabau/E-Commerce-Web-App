@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Component } from "react";
 import "./Shop.css";
 import ProductList_jetLiners from "./ProductList_jetLiners";
