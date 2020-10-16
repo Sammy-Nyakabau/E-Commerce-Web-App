@@ -11,7 +11,7 @@ function Product_component(props) {
       //Add item to basket...
       dispatch({
           type: "ADD_TO_BASKET",
-          product
+          item: product
       })
   };
   return (

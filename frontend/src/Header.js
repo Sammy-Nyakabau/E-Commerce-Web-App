@@ -4,18 +4,22 @@ import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import PersonIcon from "@material-ui/icons/Person";
 import BookmarksIcon from "@material-ui/icons/Bookmarks";
 import "./Header.css";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { useStateValue } from "./providers/StateProvider";
-
+import { logout } from "./services/authService";
 
 function Header() {
-  const [{ basket}] = useStateValue();
+  const [{ basket, user }] = useStateValue();
+
+  const Logout = async () => {
+    await logout();
+  };
   return (
     <div className="header">
       <Link to="/">
-      <div className="header__logo">
-        <p>AVIATO</p>
-      </div>
+        <div className="header__logo">
+          <p>AVIATO</p>
+        </div>
       </Link>
       <div className="header__navbar">
         <ul>
@@ -23,7 +27,9 @@ function Header() {
             <SearchIcon />
           </li>
           <li>
-            <span>SHOP</span>
+            <Link to="/shop">
+            <span className="header__text">SHOP</span>
+            </Link>
           </li>
           <li>
             <PersonIcon />
@@ -32,13 +38,23 @@ function Header() {
             <BookmarksIcon />
           </li>
           <li>
-            <div className="basket">
+            <Link to="/checkout">
+            <div className="basket header__text" >
               <ShoppingBasketIcon />
               <span className="basketCount">{basket.length}</span>
             </div>
+            </Link>
           </li>
           <li>
-            <span>LOGIN</span>
+            {user ? (
+              <a href="/">
+                <span className="header__text" onClick={Logout}>LOGOUT</span>
+              </a>
+            ) : (
+              <Link to="/login">
+              <span className="header__text" >LOGIN</span>
+            </Link>
+            )}
           </li>
         </ul>
       </div>
