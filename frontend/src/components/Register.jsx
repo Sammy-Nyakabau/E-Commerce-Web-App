@@ -1,14 +1,17 @@
 /* eslint-disable */
 import React, { useState } from "react";
 import "../styles/Login.css";
-import { register, login } from "../services/authService";
+import { register} from "../services/authService";
 import { useHistory } from "react-router-dom";
+import { useStateValue } from "../providers/StateProvider";
+
 
 function Register() {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [{}, dispatch] = useStateValue();
 
   const registerUser = async (e) => {
     e.preventDefault();
@@ -17,11 +20,13 @@ function Register() {
       const {data: user} = await register(username, email, password);
 
       if (user) {
+        // the user just logged in / the user was logged in
+
         dispatch({
           type: "SET_USER",
           user: user,
         });
-      }else {
+      } else {
         // the user is logged out
         dispatch({
           type: "SET_USER",
@@ -29,7 +34,7 @@ function Register() {
         });
       }
       if (user) {
-        history.push("/")
+        history.push("/");
       }
     } catch (ex) {
       if (ex.response && ex.response.status === 400) {

@@ -1,5 +1,6 @@
 /* eslint-disable */
 import React from "react";
+import CurrencyFormat from "react-currency-format";
 import "./Product_component.css";
 import { useStateValue } from "../providers/StateProvider"
 
@@ -19,10 +20,20 @@ function Product_component(props) {
       <div className="product">
         <div className="product_info">
           <p className="product_name">{product.name}</p>
-          <p className="product_price">
-            <small>$</small>
-            <strong>{product.price}</strong>
+          <CurrencyFormat
+        renderText={(value) => (
+          <>
+            <p className="product_price">
+            <strong>{value}</strong>
           </p>
+          </>
+        )}
+        decimalscale={2}
+        value={product.price}
+        displayType={"text"}
+        thousandSeparator={true}
+        prefix={"$"}
+      />
           <p className="description">{product.description}</p>
           <div className="product_rating">
             {Array(product.rating)
