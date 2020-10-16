@@ -40,10 +40,10 @@
 .buy_button button {
   background-color: transparent;
   display: inline-block;
-  font-size: 15px;
+  font-size: 13px;
   color: white;
   border: 1px solid #fff;
-  padding: 5px 5px;
+  padding: 7px 7px;
   border-radius: 15px;
   font-family: "Montserrat", sans-serif;
   cursor: pointer;
