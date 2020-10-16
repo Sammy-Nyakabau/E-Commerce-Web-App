@@ -39,6 +39,11 @@ router.post(
   }
 );
 
+router.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/');
+});
+
 // @desc    Update User details
 // @route   PUT /api/users
 // @access  Private
