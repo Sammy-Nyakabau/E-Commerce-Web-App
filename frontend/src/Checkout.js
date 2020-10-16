@@ -8,6 +8,7 @@ import { useStateValue } from "./providers/StateProvider";
 function Checkout() {
   const [{ basket, user }] = useStateValue();
 
+
   return (
     <div classname="Checkout">
       <div className="checkout_banner">
