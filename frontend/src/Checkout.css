@@ -1,19 +1,19 @@
 html {
-    font-family: GillSans, Calibri, Trebuchet, sans-serif;
- }
-.checkout{
-    position:relative;
+  font-family: GillSans, Calibri, Trebuchet, sans-serif;
+  background-color: black;
+}
+.checkout {
+  position: relative;
 }
 .checkout_banner {
-    width: 100%;
-    z-index: -1;
-    margin-bottom: -150px;
-    font-family: "Montserrat", sans-serif;
-    font-size: 30px;
-   
-  }
-  .checkout_banner img {
-    width:100%;
+  width: 100%;
+  z-index: -1;
+  margin-bottom: -150px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+}
+.checkout_banner img {
+  width: 100%;
   mask-image: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 1),
@@ -21,48 +21,62 @@ html {
     rgba(0, 0, 0, 0)
   );
 }
-  .checkout_banner_heading {
-    z-index: 8;
-    color: lightgrey;
-    position: absolute;
-    top: 200px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+.home {
+  max-width: 1500px;
+  margin: 0px auto;
+  z-index: 10;
+  background-color: black;
+}
+.home_row {
+  display: flex;
+  z-index: 10;
+  margin: 0px 5px;
+  flex-wrap: wrap;
+  margin: 0px auto;
+  justify-content: center;
+}
+.checkout_banner_heading {
+  z-index: 8;
+  color: lightgrey;
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-  .checkout_product {
-    font-family: "Montserrat", sans-serif;
-    font-size: 25px;
-    display: flex;
-    flex-direction: column;
-    z-index: 10;
-    background-color: lightgrey;
-    align-items: center;
-    border-radius: 10px;
-    opacity:0.95;
-    justify-content: flex-end;
-    margin: auto;
-    padding: 20px;
-    max-height: 400px;
-    min-width: 100px;
-    width:50%;
+.checkout_product {
+  font-family: "Montserrat", sans-serif;
+  font-size: 25px;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  background-color: lightgrey;
+  align-items: center;
+  border-radius: 10px;
+  opacity: 0.95;
+  justify-content: flex-end;
+  margin: auto;
+  padding: 20px;
+  max-height: 200px;
+  min-width: 100px;
+  width: 50%;
 
-    position:absolute;
-    top: 350px;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 350px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-    mask-image: linear-gradient(
+  mask-image: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 1),
     80%,
     rgba(0, 0, 0, 1)
-    );
-  }
-  .checkout_product_info{
-    height:100px;
-    margin-bottom: 15px;
+  );
 }
-.checkout_total{
-    margin-top: 5px;
+.checkout_product_info {
+  height: 100px;
+  margin-bottom: 15px;
+}
+.checkout_total {
+  margin-top: 5px;
 }

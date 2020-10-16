@@ -20,7 +20,7 @@ const reducer = (state, action) => {
     case "ADD_TO_WISHLIST":
       return {
         ...state,
-        basket: [...state.basket, action.item],
+        wishlist: [...state.wishlist, action.item],
       };
 
     case "EMPTY_BASKET":
