@@ -35,6 +35,9 @@ function Header() {
               <span className="basketCount">0</span>
             </div>
           </li>
+          <li>
+            <span>LOGIN</span>
+          </li>
         </ul>
       </div>
     </div>
