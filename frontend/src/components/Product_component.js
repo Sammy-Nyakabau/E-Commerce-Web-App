@@ -1,6 +1,8 @@
 /* eslint-disable */
 import React from "react";
 import "./Product_component.css";
+import Wishlist_button from "./Wishlist_button"
+import FavoriteIcon from '@material-ui/icons/Favorite';
 
 function Product_component(props) {
   let { product } = props;
@@ -8,7 +10,10 @@ function Product_component(props) {
     <div className="col s6">
       <div className="product">
         <div className="product_info">
-          <p className="product_name">{product.name}</p>
+          <div className="wishlist">
+            <p className="product_name">{product.name}</p>
+             {/* <Wishlist_button /> */}
+          </div>
           <p className="product_price">
             <small>$</small>
             <strong>{product.price}</strong>

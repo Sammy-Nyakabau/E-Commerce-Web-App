@@ -24,9 +24,6 @@ function Header() {
             <span>SHOP</span>
           </li>
           <li>
-            <PersonIcon />
-          </li>
-          <li>
             <BookmarksIcon />
           </li>
           <li>
@@ -34,6 +31,9 @@ function Header() {
               <ShoppingBasketIcon />
               <span className="basketCount">0</span>
             </div>
+          </li>
+          <li>
+            <PersonIcon />
           </li>
           <li>
             <span>LOGIN</span>

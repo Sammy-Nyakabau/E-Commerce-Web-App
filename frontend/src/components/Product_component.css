@@ -67,3 +67,6 @@
 .product_graphics {
   align-items: center;
 }
+.wishlist{
+    display: flex;
+}
