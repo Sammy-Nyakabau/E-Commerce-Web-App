@@ -31,6 +31,11 @@ function Header() {
             <span className="header__text">SHOP</span>
             </Link>
           </li>
+          {
+            user && <li>
+            <PersonIcon />
+          </li>
+          }
           <li>
             <BookmarksIcon />
           </li>

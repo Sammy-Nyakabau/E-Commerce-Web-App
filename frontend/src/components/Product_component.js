@@ -2,8 +2,6 @@
 import React from "react";
 import CurrencyFormat from "react-currency-format";
 import "./Product_component.css";
-import Wishlist_button from "./Wishlist_button"
-import FavoriteIcon from '@material-ui/icons/Favorite';
 import { useStateValue } from "../providers/StateProvider"
 
 function Product_component(props) {
