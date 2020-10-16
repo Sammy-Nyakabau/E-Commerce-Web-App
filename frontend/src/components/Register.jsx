@@ -14,10 +14,22 @@ function Register() {
     e.preventDefault();
 
     try {
-      const data = await register(username, email, password);
-      if (data) {
-        history.push("/");
-        await login(username,  password);
+      const {data: user} = await register(username, email, password);
+
+      if (user) {
+        dispatch({
+          type: "SET_USER",
+          user: user,
+        });
+      }else {
+        // the user is logged out
+        dispatch({
+          type: "SET_USER",
+          user: null,
+        });
+      }
+      if (user) {
+        history.push("/")
       }
     } catch (ex) {
       if (ex.response && ex.response.status === 400) {
