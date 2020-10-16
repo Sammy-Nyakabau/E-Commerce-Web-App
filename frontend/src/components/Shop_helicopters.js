@@ -64,7 +64,7 @@ class Shop extends Component {
               <a href="#Unmanned Aerial Systems">Unmanned Aerial Systems</a>
             </li>
             </Link>
-            <Link to="/shop_jetliners">
+            <Link to="/shop_jetLiners">
             <li>
               <a href="#Jet Liners">Jet Liners</a>
             </li>
