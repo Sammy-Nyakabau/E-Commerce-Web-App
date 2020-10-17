@@ -1,8 +1,7 @@
-.home {
+.homepage {
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 20px;
   max-width: 1600px;
 }
 
@@ -27,13 +26,13 @@
   z-index: 8;
   color: white;
   position: absolute;
-  bottom: 240px;
+  bottom: 250px;
   left: 100px;
 }
 .banner h2 {
   font-family: "Montserrat", sans-serif;
   font-size: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
 }
 .banner button {
   background-color: transparent;

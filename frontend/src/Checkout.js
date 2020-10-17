@@ -21,7 +21,7 @@ function Checkout() {
             <Subtotal />
           </div>
         </div>
-        <div className="home">
+        <div className="checkout_home">
           <div className="row">
             {basket.map((item) => (
               <CheckoutProduct key={item.id} product={item} />

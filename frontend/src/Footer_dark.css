@@ -1,5 +1,5 @@
-.footer{
-    padding-top:50px;
+.footer_dark_page{
+    padding-bottom: 50px;
     padding-bottom: 50px;
     background-color: black;
     color:white;
@@ -14,7 +14,7 @@
     color: black;
 
 }
-.container ul {
+.footer_dark_container ul {
     display: flex;
     justify-content: space-evenly;
     padding-top: 20px;

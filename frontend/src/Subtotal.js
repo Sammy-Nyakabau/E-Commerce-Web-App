@@ -34,7 +34,7 @@ function Subtotal() {
   }
 
   return (
-    <div  className="subtotal">
+    <div  className="subtotal_page">
       <CurrencyFormat
         renderText={(value) => (
           <>

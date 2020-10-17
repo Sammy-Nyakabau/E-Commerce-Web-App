@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 function Home() {
   return (
-    <div className="home">
+    <div className="homepage">
       <div className="home__container">
         <div className="banner">
           <img src="https://www.leonardocompany.com/o/adaptive-media/image/10059482/h_703/Banner%20Aria%201440x760.jpg?t=1583315858025" />

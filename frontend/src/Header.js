@@ -34,9 +34,11 @@ function Header() {
             </Link>
           </li>
           {user && (
+            <Link to="/user_page">
             <li>
               <PersonIcon />
             </li>
+            </Link>
           )}
           <Link to="/wishlist">
             <li className="header__text">
