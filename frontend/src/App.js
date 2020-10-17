@@ -8,6 +8,7 @@ import Footer_dark from "./Footer_dark";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Shop from "./components/Shop";
+import Wishlist from "./components/Wishlist";
 import Checkout from "./Checkout";
 import Shop_helicopters from "./components/Shop_helicopters";
 import Shop_aircrafts from "./components/Shop_aircrafts";
@@ -32,6 +33,11 @@ function App() {
           <Route path="/checkout">
             <Header />
             <Checkout />
+            <Footer />
+          </Route>
+          <Route path="/wishlist">
+            <Header />
+            <Wishlist />
             <Footer />
           </Route>
           <Route path="/shop">

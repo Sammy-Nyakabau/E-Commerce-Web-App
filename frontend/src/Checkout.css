@@ -20,6 +20,10 @@ html {
     rgba(0, 0, 0, 0)
   );
 }
+#wishlist__header {
+  color: #fff;
+}
+
 .home {
   max-width: 1500px;
   margin: 0px;

@@ -28,34 +28,38 @@ function Header() {
           </li>
           <li>
             <Link to="/shop">
-            <span className="header__text">SHOP</span>
+              <span className="header__text">SHOP</span>
             </Link>
           </li>
-          {
-            user && <li>
-            <PersonIcon />
-          </li>
-          }
-          <li>
-            <BookmarksIcon />
-          </li>
+          {user && (
+            <li>
+              <PersonIcon />
+            </li>
+          )}
+          <Link to="/wishlist">
+            <li className="header__text">
+              <BookmarksIcon />
+            </li>
+          </Link>
           <li>
             <Link to="/checkout">
-            <div className="basket header__text" >
-              <ShoppingBasketIcon />
-              <span className="basketCount">{basket.length}</span>
-            </div>
+              <div className="basket header__text">
+                <ShoppingBasketIcon />
+                <span className="basketCount">{basket.length}</span>
+              </div>
             </Link>
           </li>
           <li>
             {user ? (
               <a href="/">
-                <span className="header__text" onClick={Logout}>LOGOUT</span>
+                <span className="header__text" onClick={Logout}>
+                  LOGOUT
+                </span>
               </a>
             ) : (
               <Link to="/login">
-              <span className="header__text" >LOGIN</span>
-            </Link>
+                <span className="header__text">LOGIN</span>
+              </Link>
             )}
           </li>
         </ul>
