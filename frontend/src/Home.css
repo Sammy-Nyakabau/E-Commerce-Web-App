@@ -1,4 +1,4 @@
-.home {
+.homepage {
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
@@ -33,7 +33,7 @@
 .banner h2 {
   font-family: "Montserrat", sans-serif;
   font-size: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 0px;
 }
 .banner button {
   background-color: transparent;

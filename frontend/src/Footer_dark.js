@@ -4,9 +4,9 @@ import "./Footer_dark.css"
 
 function Footer() {
     return (
-        <div className="footer">
+        <div className="footer_dark_page">
             <div id="line"/>
-            <div className="container">
+            <div className="footer_dark_container">
                 <ul>
                     <li>©AVIATO2020</li>
                     <li>About us</li>

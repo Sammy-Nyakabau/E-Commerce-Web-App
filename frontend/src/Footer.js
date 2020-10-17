@@ -4,9 +4,9 @@ import "./Footer.css"
 
 function Footer() {
     return (
-        <div className="footer">
-            <div id="line"/>
-            <div className="container">
+        <div className="footer_page">
+            
+            <div className="footer_container">
                 <ul>
                     <li>©AVIATO2020</li>
                     <li>About us</li>
