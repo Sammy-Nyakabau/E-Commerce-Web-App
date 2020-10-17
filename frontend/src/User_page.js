@@ -51,6 +51,7 @@ function User_page() {
                 placeholder={"Your name"}
                 defaultValue={user?.username || ""}
                 value={username}
+
                 type="text"
                 tabindex="1"
                 autofocus

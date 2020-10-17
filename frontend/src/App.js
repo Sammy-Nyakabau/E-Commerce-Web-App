@@ -17,6 +17,7 @@ import Shop_jetLiners from "./components/Shop_jetliners";
 import Shop_unmannedAerialSystems from "./components/Shop_unmannedAerialSystems"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import User_page from "./User_page";
+import Order_page from "./components/Order_page";
 // import User from "./User";
 
 
@@ -74,6 +75,11 @@ function App() {
           </Route>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/Order_page">
+            <Header/>
+            <Order_page/>
+            <Footer/>
           </Route>
           <Route path="/register">
             <Register />
