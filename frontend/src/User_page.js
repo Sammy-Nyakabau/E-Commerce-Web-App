@@ -15,7 +15,7 @@ function User_page() {
           <form id="contact" action="" method="post">
             <fieldset>
               <input
-                placeholder="Your name"
+                placeholder="Sahil Verma"
                 type="text"
                 tabindex="1"
                 required
@@ -24,7 +24,7 @@ function User_page() {
             </fieldset>
             <fieldset>
               <input
-                placeholder="Your Email Address"
+                placeholder="sahil@gamil.com"
                 type="email"
                 tabindex="2"
                 required
@@ -32,17 +32,17 @@ function User_page() {
             </fieldset>
             <fieldset>
               <input
-                placeholder="Your Phone Number (optional)"
+                placeholder="938898472"
                 type="tel"
                 tabindex="3"
                 required
               />
             </fieldset>
             <fieldset>
-              <input placeholder="Country" type="url" tabindex="4" required />
+              <input placeholder="India" type="url" tabindex="4" required />
             </fieldset>
             <fieldset>
-              <input placeholder="Address" type="url" tabindex="4" required />
+              <input placeholder="2/28 New Delhi" type="url" tabindex="4" required />
             </fieldset>
             <fieldset>
               <button

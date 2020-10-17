@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import PersonIcon from "@material-ui/icons/Person";
@@ -8,14 +8,27 @@ import { Link } from "react-router-dom";
 import { useStateValue } from "./providers/StateProvider";
 import { logout } from "./services/authService";
 
+
 function Header() {
+  const[header ,setHeader] = useState(false);
   const [{ basket, user }] = useStateValue();
 
   const Logout = async () => {
     await logout();
   };
+
+  const changeBackground = () => {
+    console.log(window.ScrollY);
+    if(window.scrollY >= 80){
+      setHeader(true) ;
+    }
+    else{
+      setHeader(false);
+    }
+  };
+  window.addEventListener('scroll', changeBackground);
   return (
-    <div className="header">
+    <div className={header ? 'header active': "header"}>
       <Link to="/">
         <div className="header__logo">
           <p>AVIATO</p>

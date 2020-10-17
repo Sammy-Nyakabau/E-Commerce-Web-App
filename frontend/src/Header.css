@@ -1,7 +1,22 @@
+.header {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  background: "transparent";
+  z-index: 1000;
+  position: fixed;
+  top:0;
+}
+.header.active{
+  background-color:black;
+}
 .header__logo {
   display: flex;
   width: 100px;
-  object-fit: contian;
+  object-fit: contain;
   padding: 0 50px;
   font-family: BOEING-style;
   cursor: pointer;
@@ -25,17 +40,7 @@
   position: right;
   padding-right: 50px;
 }
-.header {
-  display: flex;
-  flex: 1;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 20px;
-  background: "transparent";
-  z-index: 10;
-  position: absolute;
-}
+
 .header__navbar li {
   display: inline-block;
   padding: 0px 20px;
