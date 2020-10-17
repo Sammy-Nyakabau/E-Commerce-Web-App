@@ -11,6 +11,10 @@
 .shop_banner img {
   width: 100%;
 }
+#search__banner{
+  z-index: -1 ;
+  
+}
 .shop_banner_heading {
   z-index: 8;
   color: lightgrey;
@@ -71,3 +75,5 @@
     font-family: "Montserrat", sans-serif;
     font-size: 30px;
   }
+
+  
