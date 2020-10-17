@@ -36,9 +36,11 @@ function Header() {
       </Link>
       <div className="header__navbar">
         <ul>
-          <li>
+          <Link to="/search">
+          <li className="header__text">
             <SearchIcon />
           </li>
+          </Link>
           <li>
             <Link to="/shop">
               <span className="header__text">SHOP</span>

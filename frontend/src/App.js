@@ -8,6 +8,7 @@ import Footer_dark from "./Footer_dark";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Shop from "./components/Shop";
+import Search from "./components/Search";
 import Wishlist from "./components/Wishlist";
 import Checkout from "./Checkout";
 import Shop_helicopters from "./components/Shop_helicopters";
@@ -43,6 +44,11 @@ function App() {
           <Route path="/shop">
             <Header />
             <Shop />
+            <Footer_dark />
+          </Route>
+          <Route path="/search">
+            <Header />
+            <Search />
             <Footer_dark />
           </Route>
          
