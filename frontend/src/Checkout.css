@@ -1,6 +1,5 @@
 html {
   font-family: GillSans, Calibri, Trebuchet, sans-serif;
-  background-color: black;
 }
 .checkout {
   position: relative;
@@ -23,14 +22,14 @@ html {
 }
 .home {
   max-width: 1500px;
-  margin: 0px auto;
+  margin: 0px;
   z-index: 10;
   background-color: black;
 }
 .home_row {
   display: flex;
   z-index: 10;
-  margin: 0px 5px;
+  margin: 0px;
   flex-wrap: wrap;
   margin: 0px auto;
   justify-content: center;

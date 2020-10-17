@@ -1,6 +1,6 @@
 .login {
   margin-top: 4rem;
-  background-color: white;
+  background-color: white !important;
   height: 100vh;
   display: flex;
   flex-direction: column;

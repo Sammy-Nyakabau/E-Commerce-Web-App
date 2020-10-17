@@ -3,6 +3,13 @@
   margin-left: 10px;
   margin-right: 10px;
   flex-direction: column;
+  margin-top: 0;
+  background-color: white !important;
+}
+
+.Categories {
+  background-color: white !important;
+  margin-top: 0;
 }
 
 ul {

@@ -12,11 +12,15 @@
   background-size: cover;
   position: relative;
   z-index: 1;
+  margin-left: 0;
+}
+.banner {
+  background-color: white;
 }
 .home_row {
   display: flex;
   z-index: 2;
-  
+  margin-top: 0;
 }
 
 .banner__words {
