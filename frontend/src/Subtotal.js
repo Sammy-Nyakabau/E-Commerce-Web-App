@@ -5,9 +5,12 @@ import CurrencyFormat from "react-currency-format";
 import { useStateValue } from "./providers/StateProvider";
 import { getBasketTotal } from "./providers/reducer";
 import { createOrder } from "./services/ordersService";
+import { useHistory } from "react-router-dom";
+
 
 function Subtotal() {
   const [{ basket, user }] = useStateValue();
+  const history = useHistory();
 
   const makeOrder = async () => {
     let orders = [];
@@ -29,6 +32,7 @@ function Subtotal() {
       orders,
     );
     console.log(createdOrder);
+    history.push("/Order_page")
   };
 
   return (

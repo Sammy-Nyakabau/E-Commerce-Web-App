@@ -6,13 +6,13 @@ import { useHistory } from "react-router-dom";
 
 function User_page() {
   const history = useHistory();
-  const [{ user }, dispatch] = useStateValue();
-  const [email, setEmail] = useState();
-  const [username, setUsername] = useState("");
-  const [address, setAddress] = useState("");
-  const [city, setCity] = useState("");
-  const [postalCode, setPostalCode] = useState("");
-  const [country, setCountry] = useState("");
+  const [{ user }, dispatch] = useStateValue("");
+  const [email, setEmail] = useState(user?.email || "");
+  const [username, setUsername] = useState(user?.username || "");
+  const [address, setAddress] = useState(user?.shippingAddress.address || "");
+  const [city, setCity] = useState(user?.shippingAddress.city || "");
+  const [postalCode, setPostalCode] = useState(user?.shippingAddress.postalCode || "");
+  const [country, setCountry] = useState(user?.shippingAddress.country || "");
 
   const updateDetails = async (e) => {
     e.preventDefault();
@@ -49,9 +49,7 @@ function User_page() {
             <fieldset>
               <input
                 placeholder={"Your name"}
-                defaultValue={user?.username || ""}
                 value={username}
-
                 type="text"
                 tabindex="1"
                 autofocus
@@ -61,7 +59,6 @@ function User_page() {
             <fieldset>
               <input
                 placeholder={"Your Email Address"}
-                defaultValue={user?.email || ""}
                 value={email}
                 type="email"
                 tabindex="2"
@@ -71,7 +68,6 @@ function User_page() {
             <fieldset>
               <input
                 placeholder={"Your Address"}
-                defaultValue={user?.shippingAddress.address || ""}
                 type="text"
                 tabindex="4"
                 value={address}
@@ -81,7 +77,6 @@ function User_page() {
             <fieldset>
               <input
                 placeholder={"Your City"}
-                defaultValue={user?.shippingAddress.city || ""}
                 type="text"
                 tabindex="4"
                 value={city}
@@ -91,7 +86,6 @@ function User_page() {
             <fieldset>
               <input
                 placeholder={"Postal Code"}
-                defaultValue={user?.shippingAddress.postalCode || ""}
                 type="text"
                 tabindex="3"
                 value={postalCode}
@@ -101,7 +95,6 @@ function User_page() {
             <fieldset>
               <input
                 placeholder={"Country"}
-                defaultValue={user?.shippingAddress.country || ""}
                 type="text"
                 tabindex="4"
                 value={country}
