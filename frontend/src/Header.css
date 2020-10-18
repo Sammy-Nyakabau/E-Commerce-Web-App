@@ -4,14 +4,15 @@
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  padding-top: 20px;
+  padding-top: 10px;
   background: "transparent";
   z-index: 1000;
   position: fixed;
   top:0;
 }
 .header.active{
-  background-color:black;
+  background-color:rgb(5, 4, 99);
+  opacity:95%;
 }
 .header__logo {
   display: flex;
