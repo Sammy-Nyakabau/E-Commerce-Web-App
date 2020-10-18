@@ -9,7 +9,6 @@ router.post("/", async (req, res) => {
   const {
     user, //ONLY FOR TESTING
     orderItems,
-    itemsPrice,
   } = req.body;
 
   if (orderItems && orderItems.length === 0) {
@@ -17,9 +16,8 @@ router.post("/", async (req, res) => {
     throw new Error("No order items");
   } else {
     const order = new Order({
-      orderItems,
       user, //ONLY FOR TESTING => SHOULD BE user: req.user._id
-      itemsPrice,
+      orderItems,
     });
 
     const createdOrder = await order.save();
@@ -31,8 +29,8 @@ router.post("/", async (req, res) => {
 // @desc    Get logged in user orders
 // @route   GET /api/orders/myorders
 // @access  Private
-router.get("/myorders", async (req, res) => {
-  const { user } = req.body;
+router.get("/myorders/:id", async (req, res) => {
+  const { id: user } = req.params;
   const orders = await Order.find({ user }); //ONLY FOR TESTING => SHOULD BE user: req.user._id
   res.json(orders);
 });

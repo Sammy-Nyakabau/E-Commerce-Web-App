@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import PersonIcon from "@material-ui/icons/Person";
@@ -44,6 +44,11 @@ function Header() {
           <li>
             <Link to="/shop">
               <span className="header__text">SHOP</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/Order_page">
+              <span className="header__text">ORDERS</span>
             </Link>
           </li>
           {user && (

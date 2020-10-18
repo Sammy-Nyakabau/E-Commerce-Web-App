@@ -38,7 +38,7 @@ function User_page() {
   return (
     <div className="user_page">
       <div className="user_banner">
-        <img src="https://i.pinimg.com/originals/d6/62/34/d662349ca14d7c76a82e11a3be958b25.jpg" />
+        <img alt="" src="https://i.pinimg.com/originals/d6/62/34/d662349ca14d7c76a82e11a3be958b25.jpg" />
         <div className="user_banner_heading">
           <h1>USER DETAILS</h1>
         </div>
