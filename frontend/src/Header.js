@@ -2,15 +2,14 @@ import React, { useState } from "react";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import PersonIcon from "@material-ui/icons/Person";
-import BookmarksIcon from "@material-ui/icons/Bookmarks";
+import FavoriteIcon from '@material-ui/icons/Favorite';
 import "./Header.css";
 import { Link } from "react-router-dom";
 import { useStateValue } from "./providers/StateProvider";
 import { logout } from "./services/authService";
 
-
 function Header() {
-  const[header ,setHeader] = useState(false);
+  const [header, setHeader] = useState(false);
   const [{ basket, user }] = useStateValue();
 
   const Logout = async () => {
@@ -19,16 +18,15 @@ function Header() {
 
   const changeBackground = () => {
     console.log(window.ScrollY);
-    if(window.scrollY >= 80){
-      setHeader(true) ;
-    }
-    else{
+    if (window.scrollY >= 80) {
+      setHeader(true);
+    } else {
       setHeader(false);
     }
   };
-  window.addEventListener('scroll', changeBackground);
+  window.addEventListener("scroll", changeBackground);
   return (
-    <div className={header ? 'header active': "header"}>
+    <div className={header ? "header active" : "header"}>
       <Link to="/">
         <div className="header__logo">
           <p>AVIATO</p>
@@ -37,30 +35,32 @@ function Header() {
       <div className="header__navbar">
         <ul>
           <Link to="/search">
-          <li className="header__text">
-            <SearchIcon />
-          </li>
+            <li className="header__text">
+              <SearchIcon />
+            </li>
           </Link>
           <li>
             <Link to="/shop">
               <span className="header__text">SHOP</span>
             </Link>
           </li>
-          <li>
-            <Link to="/Order_page">
-              <span className="header__text">ORDERS</span>
-            </Link>
-          </li>
+          {user && (
+            <li>
+              <Link to="/Order_page">
+                <span className="header__text">ORDERS</span>
+              </Link>
+            </li>
+          )}
           {user && (
             <Link to="/user_page">
-            <li>
-              <PersonIcon />
-            </li>
+              <li className="header__text">
+                <PersonIcon />
+              </li>
             </Link>
           )}
           <Link to="/wishlist">
             <li className="header__text">
-              <BookmarksIcon />
+              <FavoriteIcon />
             </li>
           </Link>
           <li>
