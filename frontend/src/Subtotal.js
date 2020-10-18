@@ -7,9 +7,8 @@ import { getBasketTotal } from "./providers/reducer";
 import { createOrder } from "./services/ordersService";
 import { useHistory } from "react-router-dom";
 
-
 function Subtotal() {
-  const [{ basket, user }] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
   const history = useHistory();
 
   const makeOrder = async () => {
@@ -27,12 +26,11 @@ function Subtotal() {
       );
     });
 
-    const { data: createdOrder } = await createOrder(
-      user._id,
-      orders,
-    );
-    console.log(createdOrder);
-    history.push("/Order_page")
+    await createOrder(user._id, orders);
+    dispatch({
+      type: "EMPTY_BASKET",
+    });
+    history.push("/Order_page");
   };
 
   return (
