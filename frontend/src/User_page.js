@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import "./User_page.css";
 import { useStateValue } from "./providers/StateProvider";
 import { updateUser } from "./services/userService";
@@ -11,12 +11,13 @@ function User_page() {
   const [username, setUsername] = useState(user?.username || "");
   const [address, setAddress] = useState(user?.shippingAddress.address || "");
   const [city, setCity] = useState(user?.shippingAddress.city || "");
-  const [postalCode, setPostalCode] = useState(user?.shippingAddress.postalCode || "");
+  const [postalCode, setPostalCode] = useState(
+    user?.shippingAddress.postalCode || ""
+  );
   const [country, setCountry] = useState(user?.shippingAddress.country || "");
 
   const updateDetails = async (e) => {
     e.preventDefault();
-    console.log("we're here");
     try {
       const { data: updated } = await updateUser(user._id, username, email, {
         address,
@@ -38,7 +39,10 @@ function User_page() {
   return (
     <div className="user_page">
       <div className="user_banner">
-        <img alt="" src="https://i.pinimg.com/originals/d6/62/34/d662349ca14d7c76a82e11a3be958b25.jpg" />
+        <img
+          alt=""
+          src="https://i.pinimg.com/originals/d6/62/34/d662349ca14d7c76a82e11a3be958b25.jpg"
+        />
         <div className="user_banner_heading">
           <h1>USER DETAILS</h1>
         </div>
@@ -102,10 +106,7 @@ function User_page() {
               />
             </fieldset>
             <fieldset>
-              <button
-                type="submit"
-                onClick={updateDetails}
-              >
+              <button type="submit" onClick={updateDetails}>
                 Update
               </button>
             </fieldset>
