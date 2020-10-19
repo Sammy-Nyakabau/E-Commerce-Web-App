@@ -1,5 +1,6 @@
 .footer_page{
-    padding: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
     background-color: rgb(231, 228, 228);
     z-index: 20;
 
@@ -11,18 +12,11 @@
     
 }
 
-.line{
-    height:1px;
-    width:100%;
-    color: black;
 
-}
 .footer_container ul {
     display: flex;
     justify-content: space-evenly;
-    padding-top: 20px;
-    padding-bottom: 22px;
-    width: 100%;
+    width: 90%;
     align-content: center;
     text-align: center;
   

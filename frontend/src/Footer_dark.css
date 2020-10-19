@@ -1,5 +1,6 @@
 .footer_dark_page{
-    padding:3rem;
+    padding-top:3rem;
+    padding-bottom:3rem;
     background-color: black;
     color:white;
 
@@ -22,9 +23,7 @@
 .footer_dark_container ul {
     display: flex;
     justify-content: space-evenly;
-    padding-top: 20px;
-    padding-bottom: 22px;
-    width: 100%;
+    width: 90%;
     align-content: center;
     text-align: center;
   
