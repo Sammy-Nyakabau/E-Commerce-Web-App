@@ -19,8 +19,7 @@ ul {
   padding-bottom: 22px;
   flex-direction: row;
   align-content: center;
- 
-  
+
   width: 100%;
 }
 .heading ul li {
@@ -35,8 +34,7 @@ a {
   font-style: normal;
   font-weight: light;
   color: rgb(23, 23, 24);
-  
 }
-a:hover{
-  color:red;
+a:hover {
+  color: red;
 }

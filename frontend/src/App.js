@@ -35,7 +35,7 @@ function App() {
           <Route path="/checkout">
             <Header />
             <Checkout />
-            <Footer />
+            <Footer_dark />
           </Route>
           <Route path="/wishlist">
             <Header />

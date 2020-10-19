@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Order_page.css";
 import { useStateValue } from "../providers/StateProvider";
 import { getMyOrders } from "../services/ordersService";
+import Product_component from "./Product_component";
 
 function Order_page() {
   const [{ user }] = useStateValue();
@@ -30,12 +31,20 @@ function Order_page() {
       <div className="order_banner">
         <img
           alt=""
-          src="https://i.pinimg.com/originals/0f/0d/58/0f0d5833c0d8aa0d164536e371958c94.jpg"
+          src="https://www.wallpapertip.com/wmimgs/124-1249936_air-strike.jpg"
         />
         <div className="order_banner_heading">
           <h1>YOUR ORDERS</h1>
         </div>
-        <div className="order_product"></div>
+        <div className="order_product">
+        <div className="home">
+          <div className="row">
+            {products.map((product) => (
+              <Product_component key={product.id} product={product} />
+            ))}
+          </div>
+        </div>
+        </div>
       </div>
     </div>
   );

@@ -15,9 +15,11 @@ module.exports = function() {
   .then(() => {
     logger.info(`Connected to database`);
     debug("Connected to database");
+    console.log("Connected to database")
   })
   .catch((err) => {
     debug("Failed to connect to database");
+    console.log("Failed to connect to database")
     logger.error(err.message);
   });
 }
