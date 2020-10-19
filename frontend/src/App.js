@@ -79,7 +79,7 @@ function App() {
           <Route path="/Order_page">
             <Header/>
             <Order_page/>
-            <Footer/>
+            <Footer_dark/>
           </Route>
           <Route path="/register">
             <Register />

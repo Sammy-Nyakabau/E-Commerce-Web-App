@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Order_page.css";
 import { useStateValue } from "../providers/StateProvider";
 import { getMyOrders } from "../services/ordersService";
-import Product_component from "./Product_component";
+import Order_component from "./Order_component";
 
 function Order_page() {
   const [{ user }] = useStateValue();
@@ -31,16 +31,21 @@ function Order_page() {
       <div className="order_banner">
         <img
           alt=""
-          src="https://www.wallpapertip.com/wmimgs/124-1249936_air-strike.jpg"
+          src="https://wallpapercave.com/wp/rE73Sms.jpg"
         />
         <div className="order_banner_heading">
           <h1>YOUR ORDERS</h1>
         </div>
         <div className="order_product">
-        <div className="home">
+        <div class="scrollboxorder">
+          <span />
+          <span />
+          <span />
+        </div>
+        <div className="order_home">
           <div className="row">
             {products.map((product) => (
-              <Product_component key={product.id} product={product} />
+              <Order_component key={product.id} product={product} />
             ))}
           </div>
         </div>
