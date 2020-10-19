@@ -8,9 +8,8 @@ import { useStateValue } from "./providers/StateProvider";
 function Checkout() {
   const [{ basket, user }] = useStateValue();
 
-
   return (
-    <div classname="Checkout">
+    <div className="Checkout">
       <div className="checkout_banner">
         <img src="https://www.ghafari.com/uploads/photos/Turkish-LMH-1-Hero.jpg" />
         <div className="checkout_banner_heading">
@@ -27,6 +26,11 @@ function Checkout() {
               <CheckoutProduct key={item.id} product={item} />
             ))}
           </div>
+        </div>
+        <div class="scrollbox">
+          <span />
+          <span />
+          <span />
         </div>
       </div>
     </div>

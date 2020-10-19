@@ -1,12 +1,12 @@
-html {
-  font-family: GillSans, Calibri, Trebuchet, sans-serif;
-}
-.checkout {
+
+.Checkout {
   position: relative;
+  background-color: black ;
 }
+
 .checkout_banner {
   width: 100%;
-  z-index: -1;
+  z-index: -10;
   margin-bottom: -150px;
   font-family: "Montserrat", sans-serif;
   font-size: 30px;
@@ -29,6 +29,8 @@ html {
   margin: 0px;
   z-index: 10;
   padding-bottom:140px;
+
+  
 }
 .home_row {
   display: flex;
@@ -82,4 +84,46 @@ html {
 }
 .checkout_total {
   margin-top: 5px;
+}
+.scrollbox{
+	position: absolute;
+	top: 600px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.scrollbox span{
+	display: block;
+	width: 20px;
+  height: 20px;
+	border-bottom: 2px solid white;
+	border-right: 2px solid white;
+	transform: rotate(45deg);
+	margin: -10px;
+	animation: animate 2s infinite;
+}
+
+.scrollbox span:nth-child(2)
+{
+	animation-delay: -0.2s;
+}
+
+.scrollbox span:nth-child(3)
+{
+	animation-delay: -0.4s;
+}
+
+@keyframes animate{
+	
+	0%{
+		opacity: 0;
+		transform: rotate(45deg) translate(-20px, -20px);
+	}
+	50%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+		transform: rotate(45deg) translate(20px, 20px);
+	}
 }

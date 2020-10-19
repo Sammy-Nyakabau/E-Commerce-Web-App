@@ -8,7 +8,7 @@ import { createOrder } from "./services/ordersService";
 import { useHistory } from "react-router-dom";
 
 
-function Subtotal() {
+function Subtotal_page() {
   const [{ basket, user }] = useStateValue();
   const history = useHistory();
 
@@ -59,4 +59,4 @@ function Subtotal() {
   );
 }
 
-export default Subtotal;
+export default Subtotal_page;
