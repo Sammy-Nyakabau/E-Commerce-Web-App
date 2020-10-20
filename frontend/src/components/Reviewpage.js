@@ -10,7 +10,7 @@ function Reviewpage() {
           src="https://cdn.wallpapersafari.com/42/0/Np20iI.jpg"
         />
         <div className="reviewpage_banner_heading">
-          <h1>REVIEWS</h1>
+          <h1>YOUR REVIEWS</h1>
         </div>
       </div>
       <div className="reviewpage_form">

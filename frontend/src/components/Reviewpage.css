@@ -3,6 +3,7 @@ html {
   }
   .reviewpage {
     position: relative;
+    background-color: black;
   }
   .reviewpage_banner {
     width: 100%;
