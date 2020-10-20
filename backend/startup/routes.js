@@ -4,6 +4,7 @@ const express = require("express");
 const products = require("../routes/products");
 const categories = require("../routes/categories");
 const orders = require("../routes/orders");
+const reviews = require("../routes/reviews");
 const users = require("../routes/users");
 const error = require("../middleware/error");
 
@@ -14,5 +15,6 @@ module.exports = function (app) {
   app.use("/api/categories", categories);
   app.use("/api/users", users);
   app.use("/api/orders", orders);
+  app.use("/api/reviews", reviews);
   app.use(error);
 };

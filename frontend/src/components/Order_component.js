@@ -6,22 +6,12 @@ import { useStateValue } from "../providers/StateProvider";
 
 function Order_component(props) {
   let { product } = props;
-  const [{ wishlist }, dispatch] = useStateValue();
-  const [fav, setFav] = useState(false);
-  const [notFav, setNotfav] = useState(true);
-
-  useEffect(() => {
-    if (wishlist.some(prod => prod._id === product._id)) {
-      setFav(true);
-      setNotfav(false);
-    }
-  },[]);
-
+  const [{ }, dispatch] = useStateValue();
 
   const addToBasket = () => {
     //Add item to basket...
     dispatch({
-      type: "Buy Again",
+      type: "ADD_TO_BASKET",
       item: product,
     });
   };
