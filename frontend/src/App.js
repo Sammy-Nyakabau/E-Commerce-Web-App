@@ -40,7 +40,7 @@ function App() {
           <Route path="/wishlist">
             <Header />
             <Wishlist />
-            <Footer />
+            <Footer_dark />
           </Route>
           <Route path="/shop">
             <Header />

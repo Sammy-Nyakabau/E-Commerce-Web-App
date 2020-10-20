@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React from "react";
-import "../Checkout.css";
+import "./Wishlist.css";
 import WishlistProduct from "./WishListProduct";
 import { useStateValue } from "../providers/StateProvider";
 
@@ -10,13 +10,18 @@ function Wishlist() {
     console.log(basket)
 
   return (
-    <div classname="checkout">
-      <div className="checkout_banner">
-        <img src="https://i.ibb.co/bW9mLsk/wp1853427-airport-wallpapers.jpg" />
-        <div className="checkout_banner_heading">
-          <h1 id="wishlist__header">YOUR WISHLIST</h1>
+    <div className="wishlistt">
+      <div className="wishlist_banner">
+        <img src="https://www.armytimes.com/resizer/gEARZ6ePQUdz7fs2UUkCDMHSdrI=/1200x630/filters:quality(100)/arc-anglerfish-arc2-prod-mco.s3.amazonaws.com/public/KJVZCJA2C5DZNJXUTKFNE7XQ5I.jpg" />
+        <div className="wishlist_banner_heading">
+          <h1 id="wishlist_heading">YOUR WISHLIST</h1>
         </div>
-        <div className="home">
+        <div class="wishlistscrollbox">
+          <span />
+          <span />
+          <span />
+        </div>
+        <div className="wishlist_home">
           <div className="row">
             {wishlist.map((item) => (
               <WishlistProduct key={item.id} product={item} />
