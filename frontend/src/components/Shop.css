@@ -20,11 +20,11 @@
   z-index: 8;
   color: lightgrey;
   position: absolute;
-  top: 200px;
+  top: 250px;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: "Montserrat", sans-serif;
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .shop_bar{
