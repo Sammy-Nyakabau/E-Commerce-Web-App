@@ -18,6 +18,7 @@ import Shop_unmannedAerialSystems from "./components/Shop_unmannedAerialSystems"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import User_page from "./User_page";
 import Order_page from "./components/Order_page";
+import Reviewpage from "./components/Reviewpage";
 // import User from "./User";
 
 
@@ -27,6 +28,11 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
+          <Route path="/reviewpage">
+            <Header/>
+            <Reviewpage/>
+            <Footer_dark/>
+          </Route>
           <Route path="/user_page">
           <Header/>
           <User_page/>
