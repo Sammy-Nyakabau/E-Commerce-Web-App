@@ -3,12 +3,13 @@ import React, { useState, useEffect } from "react";
 import CurrencyFormat from "react-currency-format";
 import "./Order_component.css";
 import { useStateValue } from "../providers/StateProvider";
+import { useHistory } from "react-router-dom";
 import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
 
-
 function Order_component(props) {
+  const history = useHistory();
   let { product } = props;
-  const [{ }, dispatch] = useStateValue();
+  const [{}, dispatch] = useStateValue();
 
   const addToBasket = () => {
     //Add item to basket...
@@ -18,7 +19,14 @@ function Order_component(props) {
     });
   };
 
-  
+  const addReview = () => {
+    dispatch({
+      type: "SET_ITEM",
+      item: product,
+    });
+    history.push("/reviewpage")
+  };
+
   return (
     <div className="col s6">
       <div className="product">
@@ -46,9 +54,13 @@ function Order_component(props) {
                 <p>⭐</p>
               ))}
           </div>
-          <div className="reviewpart">
+          <div
+            onClick={addReview}
+            style={{ cursor: "pointer" }}
+            className="reviewpart"
+          >
             <div className="see_reviews">Add Review</div>{" "}
-            <div className="review_arrow">
+            <div  className="review_arrow">
               <ArrowRightAltIcon />
             </div>
           </div>

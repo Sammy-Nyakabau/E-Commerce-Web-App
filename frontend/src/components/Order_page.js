@@ -18,13 +18,9 @@ function Order_page() {
         });
       });
       setproducts(orderedProducts);
-      dispatch({
-        type: "ADD_ORDERS",
-        item: products,
-      });
     }
     getOrders();
-  });
+  }, []);
 
   //products array stores all the ordered products by the logged in user
 

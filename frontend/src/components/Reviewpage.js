@@ -2,23 +2,37 @@ import React, { useState } from "react";
 import "./Reviewpage.css";
 import { useHistory } from "react-router-dom";
 import { addReview } from "../services/reviewsService";
+import { getMyOrders } from "../services/ordersService";
 import { useStateValue } from "../providers/StateProvider";
 
 function Reviewpage() {
   const history = useHistory();
-  const [{ item, orders, user }] = useStateValue();
+  const [{ item, user }] = useStateValue();
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
-  const [verified, setVerified] = useState(false);
-
-
-  const createReview = async () => {
-    if (orders.length > 5) {
-      setVerified(true);
+  
+  const createReview = async (e) => {
+    e.preventDefault();
+    let orderedProducts = [];
+    let verified = false;
+    
+    const { data: userOrders } = await getMyOrders(user._id);
+    userOrders.forEach((order) => {
+      order.orderItems.forEach((prod) => {
+        orderedProducts.push(prod);
+      });
+    });
+    if (orderedProducts.length > 5) {
+      verified = true;
     }
+
     try {
-      const review = {user_name: user.name, rating, comment}
-      const {data: createdReview} = await addReview(item._id, review, verified)
+      const review = { user_name: user.username, rating, comment };
+      const { data: createdReview } = await addReview(
+        item._id,
+        review,
+        verified
+      );
       console.log(createdReview);
       history.push("/shop")
     } catch (error) {

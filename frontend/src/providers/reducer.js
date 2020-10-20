@@ -4,7 +4,6 @@ export const initialState = {
   wishlist: [],
   user: null,
   item: {},
-  orders: []
 };
 
 // Selector
@@ -30,12 +29,6 @@ const reducer = (state, action) => {
         ...state,
         item: action.item
       }
-      
-      case "ADD_ORDERS":
-        return {
-          ...state,
-          item: [...state.orders,...action.item]
-        }
 
     case "EMPTY_BASKET":
       return {
