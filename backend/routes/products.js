@@ -10,4 +10,23 @@ router.get("/", async (req, res) => {
   res.send(products);
 });
 
+router.put("/:id", async (req, res) => {
+  const { numberOfReviews, rating } = req.body;
+  const product = await Products.findByIdAndUpdate(
+    req.params.id,
+    {
+      'number of reviews': numberOfReviews,
+      rating
+    },
+    {
+      new: true,
+    }
+  );
+
+  if (!product)
+    return res.status(404).send("The product with the given ID was not found.");
+
+  res.send(product);
+});
+
 module.exports = router;

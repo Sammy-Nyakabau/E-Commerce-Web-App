@@ -1,6 +1,6 @@
 import http from "./httpService";
 
-const apiEndpoint = "/revies";
+const apiEndpoint = "/reviews";
 
 export function getReviews(id) {
   return http.get(`${apiEndpoint}/${id}`);

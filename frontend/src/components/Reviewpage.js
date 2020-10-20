@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./Reviewpage.css";
 import { useHistory } from "react-router-dom";
-import { addReview } from "../services/reviewsService";
+import { addReview, getReviews } from "../services/reviewsService";
+import { getMyOrders, updateOrders } from "../services/ordersService";
+import { updateProduct } from "../services/productService";
 import { useStateValue } from "../providers/StateProvider";
 import { makeStyles } from "@material-ui/core/styles";
 import Rating from "@material-ui/lab/Rating";
@@ -24,28 +26,58 @@ const useStyles = makeStyles({
 
 function Reviewpage() {
   const history = useHistory();
-  const [{ item, orders, user }] = useStateValue();
-  const [rating, setRating] = useState(0);
+  const [{ item, user }] = useStateValue();
+  const [rating, setRating] = useState(1);
   const [comment, setComment] = useState("");
-  const [verified, setVerified] = useState(false);
+
 
   const [value, setValue] = React.useState(2);
   const [hover, setHover] = React.useState(-1);
   const classes = useStyles();
 
-  const createReview = async () => {
-    if (orders.length > 5) {
-      setVerified(true);
+  const createReview = async (e) => {
+    e.preventDefault();
+    let orderedProducts = [];
+    let verified = false;
+
+    const { data: userOrders } = await getMyOrders(user._id);
+    userOrders.forEach((order) => {
+      order.orderItems.forEach((prod) => {
+        orderedProducts.push(prod);
+      });
+    });
+    if (orderedProducts.length > 5) {
+      verified = true;
     }
+
     try {
-      const review = { user_name: user.name, rating, comment };
+
+      const review = { user_name: user.username, rating, comment };
       const { data: createdReview } = await addReview(
-        item._id,
+        item.product,
         review,
         verified
       );
-      console.log(createdReview);
-      history.push("/shop");
+
+      let ratings = [];
+      const { data: reviews } = await getReviews(item.product);
+      let numberOfReviews = reviews.length;
+
+      reviews.forEach((review) => {
+        ratings.push(review.review.rating);
+      });
+
+      let averageRatings = Math.floor(ratings.reduce((a, b) => a + b) / ratings.length);
+
+      const { data: updated } = await updateProduct(
+        item.product,
+        numberOfReviews,
+        averageRatings
+      );
+
+      console.log(updated)
+
+      history.push("/shop")
     } catch (error) {
       console.log(error);
     }
@@ -61,7 +93,7 @@ function Reviewpage() {
       </div>
       <div className="reviewpage_form">
         <div class="reviewpage_container">
-          <form id="contact">
+        <form id="contact">
             <fieldset>
               <input
                 placeholder={"Product Name"}
@@ -82,8 +114,7 @@ function Reviewpage() {
                 }}
                 onChangeActive={(event, newHover) => {
                   setHover(newHover);
-                }}
-              />
+                }}/>          
               {value !== null && (
                 <Box ml={2}>{labels[hover !== -1 ? hover : value]}</Box>
               )}
