@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import CurrencyFormat from "react-currency-format";
 import "./Order_component.css";
 import { useStateValue } from "../providers/StateProvider";
+import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
+
 
 function Order_component(props) {
   let { product } = props;
@@ -43,6 +45,12 @@ function Order_component(props) {
               .map((_, i) => (
                 <p>⭐</p>
               ))}
+          </div>
+          <div className="reviewpart">
+            <div className="see_reviews">Add Review</div>{" "}
+            <div className="review_arrow">
+              <ArrowRightAltIcon />
+            </div>
           </div>
           <div className="buy_button">
             <button onClick={addToBasket}>Buy Again</button>
