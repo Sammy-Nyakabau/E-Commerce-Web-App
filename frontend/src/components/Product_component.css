@@ -76,3 +76,18 @@
 .wishlist {
   display: flex;
 }
+.wish_component{
+  display:flex;
+}
+.interest{
+  padding-left: 10px;
+  font-size: 13px;
+  position: relative;
+  top:1px;
+  left:0px;
+}
+.heart_button{
+  position: relative;
+  bottom:0px;
+  left:4px;
+}

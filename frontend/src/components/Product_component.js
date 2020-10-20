@@ -73,6 +73,8 @@ function Product_component(props) {
           <div className="buy_button">
             <button onClick={addToBasket}>Add to basket</button>
           </div>
+          <div className="wish_component">
+            <div className="heart_button">
           {fav && (
             <i
               onClick={removeFromWishList}
@@ -89,7 +91,11 @@ function Product_component(props) {
               aria-hidden="true"
             />
           )}
-
+          </div>
+          <div className="interest">
+            0 People are interested 
+          </div>
+          </div>
           <div className="product_graphics">
             <img src={product.image} />
           </div>
