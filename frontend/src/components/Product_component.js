@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import CurrencyFormat from "react-currency-format";
 import "./Product_component.css";
 import { useStateValue } from "../providers/StateProvider";
+import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
 
 function Product_component(props) {
   let { product } = props;
@@ -11,12 +12,11 @@ function Product_component(props) {
   const [notFav, setNotfav] = useState(true);
 
   useEffect(() => {
-    if (wishlist.some(prod => prod._id === product._id)) {
+    if (wishlist.some((prod) => prod._id === product._id)) {
       setFav(true);
       setNotfav(false);
     }
-  },[]);
-
+  }, []);
 
   const addToBasket = () => {
     //Add item to basket...
@@ -45,7 +45,7 @@ function Product_component(props) {
   };
   return (
     <div className="col s6">
-      <div className="product">
+      <div className="product_comp">
         <div className="product_info">
           <p className="product_name">{product.name}</p>
           <CurrencyFormat
@@ -70,31 +70,38 @@ function Product_component(props) {
                 <p>⭐</p>
               ))}
           </div>
+          <div className="button_parts">
+          <div className="reviewpart">
+            <div className="see_reviews">View Reviews</div>{" "}
+            <div className="review_arrow">
+              <ArrowRightAltIcon />
+            </div>
+          </div>
           <div className="buy_button">
             <button onClick={addToBasket}>Add to basket</button>
           </div>
+          
+          </div>
           <div className="wish_component">
             <div className="heart_button">
-          {fav && (
-            <i
-              onClick={removeFromWishList}
-              style={{ cursor: "pointer" }}
-              className="fa fa-heart"
-              aria-hidden="true"
-            />
-          )}
-          {notFav && (
-            <i
-              onClick={addToWishList}
-              style={{ cursor: "pointer" }}
-              className="fa fa-heart-o"
-              aria-hidden="true"
-            />
-          )}
-          </div>
-          <div className="interest">
-            0 People are interested 
-          </div>
+              {fav && (
+                <i
+                  onClick={removeFromWishList}
+                  style={{ cursor: "pointer" }}
+                  className="fa fa-heart"
+                  aria-hidden="true"
+                />
+              )}
+              {notFav && (
+                <i
+                  onClick={addToWishList}
+                  style={{ cursor: "pointer" }}
+                  className="fa fa-heart-o"
+                  aria-hidden="true"
+                />
+              )}
+            </div>
+            <div className="interest">0 People are interested</div>
           </div>
           <div className="product_graphics">
             <img src={product.image} />
