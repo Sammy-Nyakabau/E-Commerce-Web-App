@@ -1,21 +1,22 @@
 import React, { useState } from "react";
 import "./Reviewpage.css";
 import { useHistory } from "react-router-dom";
-import { addReview } from "../services/reviewsService";
-import { getMyOrders } from "../services/ordersService";
+import { addReview, getReviews } from "../services/reviewsService";
+import { getMyOrders, updateOrders } from "../services/ordersService";
+import { updateProduct } from "../services/productService";
 import { useStateValue } from "../providers/StateProvider";
 
 function Reviewpage() {
   const history = useHistory();
   const [{ item, user }] = useStateValue();
-  const [rating, setRating] = useState(0);
+  const [rating, setRating] = useState(1);
   const [comment, setComment] = useState("");
-  
+
   const createReview = async (e) => {
     e.preventDefault();
     let orderedProducts = [];
     let verified = false;
-    
+
     const { data: userOrders } = await getMyOrders(user._id);
     userOrders.forEach((order) => {
       order.orderItems.forEach((prod) => {
@@ -29,11 +30,29 @@ function Reviewpage() {
     try {
       const review = { user_name: user.username, rating, comment };
       const { data: createdReview } = await addReview(
-        item._id,
+        item.product,
         review,
         verified
       );
-      console.log(createdReview);
+
+      let ratings = [];
+      const { data: reviews } = await getReviews(item.product);
+      let numberOfReviews = reviews.length;
+
+      reviews.forEach((review) => {
+        ratings.push(review.review.rating);
+      });
+
+      let averageRatings = Math.floor(ratings.reduce((a, b) => a + b) / ratings.length);
+
+      const { data: updated } = await updateProduct(
+        item.product,
+        numberOfReviews,
+        averageRatings
+      );
+
+      console.log(updated)
+
       history.push("/shop")
     } catch (error) {
       console.log(error);
@@ -63,7 +82,8 @@ function Reviewpage() {
             <fieldset>
               <input
                 placeholder={"Rating"}
-                type="text"
+                type="number"
+                tabindex="7"
                 value={rating}
                 onChange={(e) => setRating(e.target.value)}
               />

@@ -20,6 +20,7 @@ function Order_component(props) {
   };
 
   const addReview = () => {
+    console.log(product._id)
     dispatch({
       type: "SET_ITEM",
       item: product,
@@ -47,12 +48,8 @@ function Order_component(props) {
             prefix={"$"}
           />
           <p className="description">{product.description}</p>
-          <div className="product_rating">
-            {Array(product.rating)
-              .fill()
-              .map((_, i) => (
-                <p>⭐</p>
-              ))}
+          <div className="buy_button">
+            <button onClick={addToBasket}>Buy Again</button>
           </div>
           <div
             onClick={addReview}
@@ -63,9 +60,6 @@ function Order_component(props) {
             <div  className="review_arrow">
               <ArrowRightAltIcon />
             </div>
-          </div>
-          <div className="buy_button">
-            <button onClick={addToBasket}>Buy Again</button>
           </div>
           <div className="product_graphics">
             <img src={product.image} />
