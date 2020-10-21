@@ -1,45 +1,34 @@
 /* eslint-disable */
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import "./Shop.css";
 import ProductList from "./ProductList";
 import { getProducts } from "../services/productService";
 import "./grid.css";
-import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
 
-class Shop extends Component {
-  state = {
-    products: [],
-  };
+function Search() {
+  const [products, setProducts] = useState([]);
 
-  async componentDidMount() {
-    const { data: products } = await getProducts();
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const { data: res } = await getProducts();
+      setProducts(res);
+    };
+    fetchProducts();
+  }, []);
 
-    this.setState({
-      products,
-    });
-    console.log(this.state.products);
-  }
-
-  render() {
-    console.log(this.state);
-
-    return (
-      <div className="shop">
-        <div id="search__banner">
-          <img src="https://i.ibb.co/1vL1YBf/Sukhoi-Su-30-military-aircraft-man-black-background-1920x1080.jpg" />
-        </div>
-
-        <div className="shop_banner_heading">
-          <h1>Search</h1>
-        </div>
-        
-        {/* <div className="shop_bar">
-        </div> */}
-        <ProductList products={this.state.products} />
+  return (
+    <div className="shop">
+      <div id="search__banner">
+        <img src="https://i.ibb.co/1vL1YBf/Sukhoi-Su-30-military-aircraft-man-black-background-1920x1080.jpg" />
       </div>
-    );
-  }
+      <div className="shop_banner_heading">
+        <h1>Search</h1>
+      </div>
+
+
+      <ProductList products={products} />
+    </div>
+  );
 }
 
-export default Shop;
+export default Search;
