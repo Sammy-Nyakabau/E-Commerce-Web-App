@@ -2,6 +2,7 @@
 import React from "react";
 import CurrencyFormat from "react-currency-format";
 import "./Product_component.css";
+import { toast } from "react-toastify";    
 import { useStateValue } from "../providers/StateProvider";
 
 function CheckoutProduct(props) {
@@ -14,6 +15,15 @@ function CheckoutProduct(props) {
       type: "REMOVE_FROM_BASKET",
       id: product.id,
     });
+    toast.info('Item removed from basket!', {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      });
   };
   const saveForLater = () => {
     //Add item to wishlist...
