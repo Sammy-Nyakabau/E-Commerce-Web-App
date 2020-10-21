@@ -12,10 +12,7 @@ function Product_component(props) {
   const [notFav, setNotfav] = useState(true);
 
   useEffect(() => {
-    if (
-      wishlist.some((prod) => prod.product === product._id) ||
-      wishlist.some((prod) => prod._id === product._id)
-    ) {
+    if (wishlist.some((prod) => prod.name === product.name)) {
       setFav(true);
       setNotfav(false);
     }

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import PersonIcon from "@material-ui/icons/Person";
-import FavoriteIcon from '@material-ui/icons/Favorite';
+import FavoriteIcon from "@material-ui/icons/Favorite";
 import "./Header.css";
 import { Link } from "react-router-dom";
 import { useStateValue } from "./providers/StateProvider";
@@ -16,35 +16,35 @@ function Header() {
 
   const Logout = async () => {
     let items = [];
-    let wishes = []
+    let wishes = [];
     basket.forEach((product) => {
-      items.push(
-        {
-          product: product._id,
-          name: product.name,
-          description: product.description,
-          image: product.image,
-          category: product.category,
-          price: product.price,
-          rating: product.rating,
-        }
-      );
+      items.push({
+        product: product._id,
+        name: product.name,
+        description: product.description,
+        image: product.image,
+        category: product.category,
+        price: product.price,
+        rating: product.rating,
+      });
     });
     wishlist.forEach((product) => {
-      wishes.push(
-        {
-          product: product._id,
-          name: product.name,
-          description: product.description,
-          image: product.image,
-          category: product.category,
-          price: product.price,
-          rating: product.rating,
-        }
-      );
+      wishes.push({
+        product: product._id,
+        name: product.name,
+        description: product.description,
+        image: product.image,
+        category: product.category,
+        price: product.price,
+        rating: product.rating,
+      });
     });
-    await addBasket(user._id, items)
-    await addWishlist(user._id, wishes)
+    if (wishlist.length > 0) {
+      await addWishlist(user._id, wishes);
+    }
+    if (basket.length > 0) {
+      await addBasket(user._id, items);
+    }
     await logout();
   };
 

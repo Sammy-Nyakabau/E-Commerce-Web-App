@@ -6,7 +6,7 @@ import { useStateValue } from "../providers/StateProvider";
 
 function CheckoutProduct(props) {
   let { product } = props;
-  const [{}, dispatch] = useStateValue();
+  const [{ wishlist }, dispatch] = useStateValue();
 
   const removeFromBasket = () => {
     //Add item to basket...
@@ -17,11 +17,15 @@ function CheckoutProduct(props) {
   };
   const saveForLater = () => {
     //Add item to wishlist...
-    dispatch({
-      type: "ADD_TO_WISHLIST",
-      item: product,
-    });
-    removeFromBasket();
+    if (wishlist.some((prod) => prod.name === product.name)) {
+      removeFromBasket();
+    } else {
+      dispatch({
+        type: "ADD_TO_WISHLIST",
+        item: product,
+      });
+      removeFromBasket();
+    }
   };
   return (
     <div className="col s6">
