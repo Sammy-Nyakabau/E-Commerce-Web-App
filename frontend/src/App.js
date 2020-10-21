@@ -1,6 +1,7 @@
 /* eslint-disable */
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import "./App.css";
+import { ToastContainer } from "react-toastify";
 import Header from "./Header";
 import Home from "./Home";
 import Footer from "./Footer";
@@ -14,35 +15,45 @@ import Checkout from "./Checkout";
 import Shop_helicopters from "./components/Shop_helicopters";
 import Shop_aircrafts from "./components/Shop_aircrafts";
 import Shop_jetLiners from "./components/Shop_jetliners";
-import Shop_unmannedAerialSystems from "./components/Shop_unmannedAerialSystems"
+import Shop_unmannedAerialSystems from "./components/Shop_unmannedAerialSystems";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import User_page from "./User_page";
 import Order_page from "./components/Order_page";
 import Reviewpage from "./components/Reviewpage";
 import Reviewdisplaypage from "./components/Reviewdisplaypage";
+import "react-toastify/dist/ReactToastify.css";
 // import User from "./User";
 
-
 function App() {
-
   return (
     <Router>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <div className="App">
         <Switch>
           <Route path="/reviewdisplay">
-            <Header/>
-            <Reviewdisplaypage/>
-            <Footer_dark/>
+            <Header />
+            <Reviewdisplaypage />
+            <Footer_dark />
           </Route>
           <Route path="/reviewpage">
-            <Header/>
-            <Reviewpage/>
-            <Footer_dark/>
+            <Header />
+            <Reviewpage />
+            <Footer_dark />
           </Route>
           <Route path="/user_page">
-          <Header/>
-          <User_page/>
-          <Footer/>
+            <Header />
+            <User_page />
+            <Footer />
           </Route>
           <Route path="/checkout">
             <Header />
@@ -64,7 +75,7 @@ function App() {
             <Search />
             <Footer_dark />
           </Route>
-         
+
           <Route path="/shop_helicopters">
             <Header />
             <Shop_helicopters />
@@ -74,7 +85,7 @@ function App() {
             <Header />
             <Shop_unmannedAerialSystems />
             <Footer_dark />
-            </Route>
+          </Route>
           <Route path="/shop_jetLiners">
             <Header />
             <Shop_jetLiners />
@@ -89,9 +100,9 @@ function App() {
             <Login />
           </Route>
           <Route path="/Order_page">
-            <Header/>
-            <Order_page/>
-            <Footer_dark/>
+            <Header />
+            <Order_page />
+            <Footer_dark />
           </Route>
           <Route path="/register">
             <Register />
