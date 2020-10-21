@@ -3,7 +3,7 @@ import "./Reviewdisplaypage.css";
 import {  getReviews } from "../services/reviewsService";
 import { useStateValue } from "../providers/StateProvider";
 import Review_component from "./Review_component";
-import Product_component from "./Product_component";
+import Review_product_component from "./Review_product_component";
 
 function Reviewdisplaypage() {
   const [{ item }] = useStateValue();
@@ -20,7 +20,7 @@ function Reviewdisplaypage() {
   return (
     <div className="reviewdisplay">
       <div className="reviewdisplay_banner">
-        <img alt="" src="https://wallpapercave.com/wp/rE73Sms.jpg" />
+        <img alt="" src="https://static01.nyt.com/images/2019/10/24/business/00boeing-lobbying2/00boeing-lobbying2-videoSixteenByNineJumbo1600-v2.jpg" />
         <div className="reviewdisplay_heading">
           <h1>PRODUCT REVIEWS</h1>
         </div>
@@ -33,7 +33,7 @@ function Reviewdisplaypage() {
           <div className="productdisplay_home">
             <div className="row">
             
-                <Product_component key={item.id} product={item} />
+                <Review_product_component key={item.id} product={item} />
             </div>
           </div>
         </div>

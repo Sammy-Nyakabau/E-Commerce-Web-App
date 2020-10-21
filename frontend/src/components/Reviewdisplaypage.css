@@ -1,14 +1,14 @@
-.order{
+.reviewdisplay{
     background-color: black;
   }
-  .order_banner {
+  .reviewdisplay_banner {
       width: 100%;
       z-index: -1;
       margin-bottom: -150px;
       font-family: "Montserrat", sans-serif;
       font-size: 30px;
     }
-    .order_banner img {
+    .reviewdisplay_banner img {
       width: 100%;
       mask-image: linear-gradient(
         to bottom,
@@ -17,25 +17,25 @@
         rgba(0, 0, 0, 0)
       );
     }
-    .order_banner_heading {
-      z-index: 8;
-      color: white;
-      position: absolute;
-      top: 300px;
-      left: 62%;
-      transform: translate(-50%, -50%);
+    .reviewdisplay_heading {
+        z-index: 8;
+        color: white;
+        position: absolute;
+        top: 300px;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
   
-    .scrollboxorder{
+    .scrollboxreview{
       position: absolute;
-      top: 500px;
-      left: 62%;
+      top: 600px;
+      left: 50%;
       transform: translate(-50%, -50%);
     }
-    .order_home{
+    .reviewdisplay_home{
       padding-bottom: 150px;
     }
-    .scrollboxorder span{
+    .scrollboxreview span{
       display: block;
       width: 20px;
       height: 20px;
@@ -46,12 +46,12 @@
       animation: animate 2s infinite;
     }
     
-    .scrollboxorder span:nth-child(2)
+    .scrollboxreview span:nth-child(2)
     {
       animation-delay: -0.2s;
     }
     
-    .scrollboxorder span:nth-child(3)
+    .scrollboxreview span:nth-child(3)
     {
       animation-delay: -0.4s;
     }
