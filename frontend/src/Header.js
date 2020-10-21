@@ -7,7 +7,7 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 import { useStateValue } from "./providers/StateProvider";
 import { logout } from "./services/authService";
-import { addWishlist } from "./services/wishlistService";
+import { addWishlist, deleteWishlist } from "./services/wishlistService";
 import { addBasket } from "./services/basketService";
 
 function Header() {
@@ -40,6 +40,7 @@ function Header() {
       });
     });
     if (wishlist.length > 0) {
+      await deleteWishlist(user._id)
       await addWishlist(user._id, wishes);
     }
     if (basket.length > 0) {

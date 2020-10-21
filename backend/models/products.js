@@ -29,12 +29,16 @@ const productsSchema = new mongoose.Schema({
   rating: {
     type: Number,
   },
-  'number of reviews': {
+  "number of reviews": {
     type: Number,
+  },
+  admirers: {
+    type: Array,
+    required: false,
   },
 });
 
-productsSchema.set('collection', 'Products');
+productsSchema.set("collection", "Products");
 
 const Products = mongoose.model("Products", productsSchema);
 

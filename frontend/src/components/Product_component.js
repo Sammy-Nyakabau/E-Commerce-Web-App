@@ -3,11 +3,12 @@ import React, { useState, useEffect } from "react";
 import CurrencyFormat from "react-currency-format";
 import "./Product_component.css";
 import { useStateValue } from "../providers/StateProvider";
+import { updateInterested } from "../services/productService";
 import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
 
 function Product_component(props) {
   let { product } = props;
-  const [{ wishlist }, dispatch] = useStateValue();
+  const [{ wishlist, user }, dispatch] = useStateValue();
   const [fav, setFav] = useState(false);
   const [notFav, setNotfav] = useState(true);
 
@@ -26,11 +27,15 @@ function Product_component(props) {
     });
   };
 
-  const addToWishList = () => {
+  const addToWishList = async () => {
     dispatch({
       type: "ADD_TO_WISHLIST",
       item: product,
     });
+    const { data: update } = await updateInterested(product._id, {
+      user: user.name,
+    });
+    console.log(update);
     setFav(true);
     setNotfav(false);
   };
@@ -100,7 +105,16 @@ function Product_component(props) {
                 />
               )}
             </div>
-            <div className="interest">0 People are interested</div>
+            {product.admirers.length > 1 && (
+              <div className="interest">
+                {product.admirers?.length || 0} People are interested in this
+              </div>
+            )}
+            {product.admirers.length === 1 && (
+              <div className="interest">
+                {product.admirers?.length} Person is interested in this
+              </div>
+            )}
           </div>
           <div className="product_graphics">
             <img src={product.image} />

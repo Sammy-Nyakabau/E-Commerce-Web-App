@@ -7,6 +7,9 @@ export function getProducts() {
 }
 
 export function updateProduct(id, numberOfReviews, rating) {
-  return http.put(`${apiEndpoint}/${id}`, {numberOfReviews, rating});
+  return http.put(`${apiEndpoint}/${id}`, { numberOfReviews, rating });
 }
 
+export function updateInterested(id, user) {
+  return http.put(`${apiEndpoint}/admirers/${id}`, { user });
+}
