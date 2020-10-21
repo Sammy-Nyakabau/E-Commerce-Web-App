@@ -29,7 +29,7 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
-          <Route path="reviewdisplay">
+          <Route path="/reviewdisplay">
             <Header/>
             <Reviewdisplaypage/>
             <Footer_dark/>

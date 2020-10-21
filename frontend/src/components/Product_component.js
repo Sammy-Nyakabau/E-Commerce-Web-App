@@ -2,11 +2,13 @@
 import React, { useState, useEffect } from "react";
 import CurrencyFormat from "react-currency-format";
 import "./Product_component.css";
+import { useHistory } from "react-router-dom";
 import { useStateValue } from "../providers/StateProvider";
 import { updateInterested } from "../services/productService";
 import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
 
 function Product_component(props) {
+  const history = useHistory();
   let { product } = props;
   const [{ wishlist, user }, dispatch] = useStateValue();
   const [fav, setFav] = useState(false);
@@ -38,6 +40,14 @@ function Product_component(props) {
     console.log(update);
     setFav(true);
     setNotfav(false);
+  };
+
+  const seeReviews = () => {
+    dispatch({
+      type: "SET_ITEM",
+      item: product,
+    });
+    history.push("/reviewdisplay");
   };
 
   const removeFromWishList = () => {
@@ -76,7 +86,11 @@ function Product_component(props) {
               ))}
           </div>
           <div className="button_parts">
-            <div className="reviewpart">
+            <div
+              onClick={seeReviews}
+              style={{ cursor: "pointer" }}
+              className="reviewpart"
+            >
               <div className="see_reviews">View Reviews</div>{" "}
               <div className="review_arrow">
                 <ArrowRightAltIcon />
@@ -105,7 +119,7 @@ function Product_component(props) {
                 />
               )}
             </div>
-            {product.admirers.length > 1 && (
+            {product.admirers?.length > 1 && (
               <div className="interest">
                 {product.admirers?.length || 0} People are interested in this
               </div>

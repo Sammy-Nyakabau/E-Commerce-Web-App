@@ -1,11 +1,21 @@
 import React, { useState, useEffect } from "react";
 import "./Reviewdisplaypage.css";
+import {  getReviews } from "../services/reviewsService";
 import { useStateValue } from "../providers/StateProvider";
-import { getMyOrders } from "../services/ordersService";
 import Review_component from "./Review_component";
 import Product_component from "./Product_component";
 
 function Reviewdisplaypage() {
+  const [{ item }] = useStateValue();
+  const [reviews, setReviews] = useState([])
+
+  useEffect(() => {
+    const fetchReviews = async() => {
+      const { data: result } = await getReviews(item._id);
+      setReviews(result)
+    }
+    fetchReviews()
+  }, []);
   
   return (
     <div className="reviewdisplay">
@@ -20,22 +30,22 @@ function Reviewdisplaypage() {
             <span />
             <span />
           </div>
-          {/* <div className="productdisplay_home">
+          <div className="productdisplay_home">
             <div className="row">
-              {products.map((product) => (
-                <Product_component key={product.id} product={product} />
+            
+                <Product_component key={item.id} product={item} />
+            </div>
+          </div>
+        </div>
+        <div className="reviewdisplay_home">
+            <div className="row">
+              {reviews.map((review) => (
+                <Review_component key={review.id} review={review} />
               ))}
             </div>
-          </div> */}
+          </div>
         </div>
-        {/* <div className="reviewdisplay_home">
-            <div className="row">
-              {products.map((product) => (
-                <Review_component key={product.id} product={product} />
-              ))}
-            </div>
-          </div> */}
-        </div>
+        {reviews.length === 0 && <div>No Reviews</div>}
       </div>
     
   );
