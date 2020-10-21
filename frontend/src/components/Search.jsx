@@ -1,5 +1,6 @@
 /* eslint-disable */
-import React, { Component } from "react";
+
+import React, { useState,useEffect } from "react";
 import "./Search.css";
 import ProductList from "./ProductList";
 import { getProducts } from "../services/productService";
@@ -8,22 +9,17 @@ import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 
 
-class Shop extends Component {
-  state = {
-    products: [],
-  };
+function Search() {
+  const [products, setProducts] = useState([]);
 
-  async componentDidMount() {
-    const { data: products } = await getProducts();
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const { data: res } = await getProducts();
+      setProducts(res);
+    };
+    fetchProducts();
+  }, []);
 
-    this.setState({
-      products,
-    });
-    console.log(this.state.products);
-  }
-
-  render() {
-    console.log(this.state);
 
     return (
       <div className="shop">
@@ -41,11 +37,11 @@ class Shop extends Component {
         {/* <div className="shop_bar">
         </div> */}
         <div className="search_content">
-        <ProductList products={this.state.products} />
+        <ProductList products={products} />
         </div>
       </div>
     );
-  }
-}
 
-export default Shop;
+      }
+
+export default Search;
