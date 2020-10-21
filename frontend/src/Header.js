@@ -7,12 +7,44 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 import { useStateValue } from "./providers/StateProvider";
 import { logout } from "./services/authService";
+import { addWishlist } from "./services/wishlistService";
+import { addBasket } from "./services/basketService";
 
 function Header() {
   const [header, setHeader] = useState(false);
   const [{ basket, wishlist, user }] = useStateValue();
 
   const Logout = async () => {
+    let items = [];
+    let wishes = []
+    basket.forEach((product) => {
+      items.push(
+        {
+          product: product._id,
+          name: product.name,
+          description: product.description,
+          image: product.image,
+          category: product.category,
+          price: product.price,
+          rating: product.rating,
+        }
+      );
+    });
+    wishlist.forEach((product) => {
+      wishes.push(
+        {
+          product: product._id,
+          name: product.name,
+          description: product.description,
+          image: product.image,
+          category: product.category,
+          price: product.price,
+          rating: product.rating,
+        }
+      );
+    });
+    await addBasket(user._id, items)
+    await addWishlist(user._id, wishes)
     await logout();
   };
 

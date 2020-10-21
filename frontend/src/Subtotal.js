@@ -5,6 +5,7 @@ import CurrencyFormat from "react-currency-format";
 import { useStateValue } from "./providers/StateProvider";
 import { getBasketTotal } from "./providers/reducer";
 import { createOrder } from "./services/ordersService";
+import { deleteBasket } from "./services/basketService";
 import { useHistory } from "react-router-dom";
 
 
@@ -26,19 +27,11 @@ function Subtotal() {
           price: product.price,
           rating: product.rating,
         }
-        // _.pick(product, [
-        //   "_id",
-        //   "name",
-        //   "description",
-        //   "image",
-        //   "category",
-        //   "price",
-        //   "rating",
-        // ])
       );
     });
 
     await createOrder(user._id, orders);
+    await deleteBasket(user._id)
     dispatch({
       type: "EMPTY_BASKET",
     });
@@ -64,7 +57,7 @@ function Subtotal() {
         thousandSeparator={true}
         prefix={"$"}
       />
-      <button onClick={makeOrder}>Proceed to checkout</button>
+      {basket.length > 0 && <button onClick={makeOrder}>Proceed to checkout</button>}
     </div>
   );
 }

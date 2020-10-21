@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import "../styles/Login.css";
 import { login } from "../services/authService";
+import { getBasket } from "../services/basketService";
+import { getWishlist } from "../services/wishlistService";
 import { useHistory } from "react-router-dom";
 import { useStateValue } from "../providers/StateProvider";
 import { Link } from "react-router-dom";
@@ -34,6 +36,30 @@ function Login() {
         });
       }
       if (user) {
+        let basketProducts = [];
+        const { data: userBasket } = await getBasket(user._id);
+        if (userBasket.length !== 0) {
+          userBasket[userBasket.length - 1].basketItems.forEach((prod) => {
+            basketProducts.push(prod);
+          });
+          console.log(basketProducts);
+          dispatch({
+            type: "SET_BASKET",
+            items: basketProducts,
+          });
+        }
+        let wishlistProducts = [];
+        const { data: userWishlist } = await getWishlist(user._id);
+        if (userWishlist.length !== 0) {
+          userWishlist[userWishlist.length - 1].wishlistItems.forEach((prod) => {
+            wishlistProducts.push(prod);
+          });
+          console.log(wishlistProducts);
+          dispatch({
+            type: "SET_WISHLIST",
+            items: wishlistProducts,
+          });
+        }
         history.push("/");
       }
     } catch (ex) {
