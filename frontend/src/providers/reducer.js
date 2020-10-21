@@ -23,12 +23,24 @@ const reducer = (state, action) => {
         ...state,
         wishlist: [...state.wishlist, action.item],
       };
-    
+
+    case "SET_BASKET":
+      return {
+        ...state,
+        basket: [...action.items],
+      };
+
+    case "SET_WISHLIST":
+      return {
+        ...state,
+        wishlist: [...action.items],
+      };
+
     case "SET_ITEM":
       return {
         ...state,
-        item: action.item
-      }
+        item: action.item,
+      };
 
     case "EMPTY_BASKET":
       return {
@@ -55,7 +67,7 @@ const reducer = (state, action) => {
           `Cant remove product (id: ${action.id}) as its not in basket!`
         );
       }
-      
+
       return {
         ...state,
         basket: newBasket,

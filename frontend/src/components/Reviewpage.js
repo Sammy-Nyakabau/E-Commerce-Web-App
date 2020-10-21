@@ -8,6 +8,7 @@ import { useStateValue } from "../providers/StateProvider";
 import { makeStyles } from "@material-ui/core/styles";
 import Rating from "@material-ui/lab/Rating";
 import Box from "@material-ui/core/Box";
+
 const labels = {
   1: "Useless",
   2: "Poor",
@@ -27,7 +28,6 @@ const useStyles = makeStyles({
 function Reviewpage() {
   const history = useHistory();
   const [{ item, user }] = useStateValue();
-  const [rating, setRating] = useState(1);
   const [comment, setComment] = useState("");
 
 
@@ -52,7 +52,7 @@ function Reviewpage() {
 
     try {
 
-      const review = { user_name: user.username, rating, comment };
+      const review = { user_name: user.username, rating: value, comment };
       const { data: createdReview } = await addReview(
         item.product,
         review,
