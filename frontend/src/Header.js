@@ -10,7 +10,7 @@ import { logout } from "./services/authService";
 
 function Header() {
   const [header, setHeader] = useState(false);
-  const [{ basket, user }] = useStateValue();
+  const [{ basket, wishlist, user }] = useStateValue();
 
   const Logout = async () => {
     await logout();

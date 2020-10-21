@@ -15,15 +15,26 @@ function Subtotal() {
   const makeOrder = async () => {
     let orders = [];
     basket.forEach((product) => {
+
       orders.push(
-        _.pick(product, [
-          "name",
-          "description",
-          "image",
-          "category",
-          "price",
-          "rating",
-        ])
+        {
+          product: product._id,
+          name: product.name,
+          description: product.description,
+          image: product.image,
+          category: product.category,
+          price: product.price,
+          rating: product.rating,
+        }
+        // _.pick(product, [
+        //   "_id",
+        //   "name",
+        //   "description",
+        //   "image",
+        //   "category",
+        //   "price",
+        //   "rating",
+        // ])
       );
     });
 
