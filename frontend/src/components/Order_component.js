@@ -17,6 +17,8 @@ function Order_component(props) {
       type: "ADD_TO_BASKET",
       item: product,
     });
+    
+    
   };
 
   const addReview = () => {
