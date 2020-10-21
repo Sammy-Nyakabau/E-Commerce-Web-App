@@ -5,6 +5,11 @@ import "./Search.css";
 import ProductList from "./ProductList";
 import { getProducts } from "../services/productService";
 import "./grid.css";
+<<<<<<< HEAD
+=======
+import { makeStyles } from "@material-ui/core/styles";
+import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
+>>>>>>> c0c8e1a3695b9a2ce7a35a19e87d65037d211d61
 
 class Search extends Component {
   state = {
@@ -38,9 +43,12 @@ class Search extends Component {
 
     return (
       <div className="shop">
-        <div id="shop_banner"></div>
+        <div id="shop_banner">
+        <img src="https://coolbackgrounds.io/images/backgrounds/black/black-contour-f41038db.svg"/>
+        </div>
 
         <div className="shop_banner_heading">
+          
           <h1>Search</h1>
         </div>
         <form>
@@ -55,8 +63,27 @@ class Search extends Component {
           />
         </form>
 
+        {/* <div className="shop_bar">
+        </div> */}
+        
         <div className="search_content">
-          <ProductList products={filtered} />
+        <div className="shop_bar">
+          <ul>
+              <li>
+                <a href="#Helicpters">Price<span><ArrowDropUpIcon/></span></a>
+              </li>
+              <li>
+                <a href="#Aircraft">Popularity<span><ArrowDropUpIcon/></span></a>
+              </li>
+              <li>
+                <a href="#Unmanned Aerial Systems">Rating<span><ArrowDropUpIcon/></span></a>
+              </li>
+              <li>
+                <a href="#Jet Liners">Reviews<span><ArrowDropUpIcon/></span></a>
+              </li>
+          </ul>
+        </div>
+        <ProductList products={filtered} />
         </div>
       </div>
     );
