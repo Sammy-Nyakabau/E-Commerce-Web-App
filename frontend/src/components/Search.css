@@ -31,12 +31,13 @@
   }
   .search_content{
       position: relative;
-      top:600px;
+      
+     
   }
   .shop_banner_heading {
     z-index: 8;
     color: lightgrey;
-    position: absol;
+    position: absolute;
     top: 250px;
     left: 50%;
     transform: translate(-50%, -50%);

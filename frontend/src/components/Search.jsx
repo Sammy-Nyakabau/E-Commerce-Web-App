@@ -6,7 +6,7 @@ import ProductList from "./ProductList";
 import { getProducts } from "../services/productService";
 import "./grid.css";
 import { makeStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
+import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 
 
 function Search() {
@@ -24,9 +24,11 @@ function Search() {
     return (
       <div className="shop">
         <div id="shop_banner">
+        <img src="https://coolbackgrounds.io/images/backgrounds/black/black-contour-f41038db.svg"/>
         </div>
 
         <div className="shop_banner_heading">
+          
           <h1>Search</h1>
         </div>
         <form>
@@ -36,7 +38,24 @@ function Search() {
 
         {/* <div className="shop_bar">
         </div> */}
+        
         <div className="search_content">
+        <div className="shop_bar">
+          <ul>
+              <li>
+                <a href="#Helicpters">Price<span><ArrowDropUpIcon/></span></a>
+              </li>
+              <li>
+                <a href="#Aircraft">Popularity<span><ArrowDropUpIcon/></span></a>
+              </li>
+              <li>
+                <a href="#Unmanned Aerial Systems">Rating<span><ArrowDropUpIcon/></span></a>
+              </li>
+              <li>
+                <a href="#Jet Liners">Reviews<span><ArrowDropUpIcon/></span></a>
+              </li>
+          </ul>
+        </div>
         <ProductList products={products} />
         </div>
       </div>

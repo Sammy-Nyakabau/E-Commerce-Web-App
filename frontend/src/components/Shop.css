@@ -33,15 +33,14 @@
 }
 
 .shop_bar ul {
-    display: flex;
-    justify-content: space-evenly;
-    padding-top: 20px;
-    padding-bottom: 22px;
-    flex-direction: row;
-    align-content: center;
-   
-    
-    width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 20px;
+  padding-bottom: 22px;
+  flex-direction: row;
+  align-content: center;
+  
+  width: 100%;
   }
   .shop_bar ul li {
     cursor: pointer;
