@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import CurrencyFormat from "react-currency-format";
 import "./Product_component.css";
-import { toast } from "react-toastify";    
+import { toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
 import { useStateValue } from "../providers/StateProvider";
 import { updateInterested } from "../services/productService";
@@ -28,7 +28,7 @@ function Product_component(props) {
       type: "ADD_TO_BASKET",
       item: product,
     });
-    toast.success('Item added to basket!', {
+    toast.success("Item added to basket!", {
       position: "bottom-center",
       autoClose: 5000,
       hideProgressBar: false,
@@ -36,7 +36,7 @@ function Product_component(props) {
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      });
+    });
   };
 
   const addToWishList = async () => {
@@ -47,10 +47,9 @@ function Product_component(props) {
     const { data: update } = await updateInterested(product._id, {
       user: user.name,
     });
-    console.log(update);
     setFav(true);
     setNotfav(false);
-    toast.info('Item added to wishlist!', {
+    toast.info("Item added to wishlist!", {
       position: "bottom-center",
       autoClose: 5000,
       hideProgressBar: false,
@@ -58,7 +57,7 @@ function Product_component(props) {
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      });
+    });
   };
 
   const seeReviews = () => {
@@ -76,7 +75,7 @@ function Product_component(props) {
     });
     setNotfav(true);
     setFav(false);
-    toast.info('Item removed from wishlist!', {
+    toast.info("Item removed from wishlist!", {
       position: "bottom-center",
       autoClose: 5000,
       hideProgressBar: false,
@@ -84,8 +83,9 @@ function Product_component(props) {
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      });
+    });
   };
+  
   return (
     <div className="col s6">
       <div className="product_comp">
@@ -124,29 +124,33 @@ function Product_component(props) {
                 <ArrowRightAltIcon />
               </div>
             </div>
-            <div className="buy_button">
-              <button onClick={addToBasket}>Add to basket</button>
-            </div>
+            {user && (
+              <div className="buy_button">
+                <button onClick={addToBasket}>Add to basket</button>
+              </div>
+            )}
           </div>
           <div className="wish_component">
-           {user && <div className="heart_button">
-              {fav && (
-                <i
-                  onClick={removeFromWishList}
-                  style={{ cursor: "pointer" }}
-                  className="fa fa-heart"
-                  aria-hidden="true"
-                />
-              )}
-              {notFav && (
-                <i
-                  onClick={addToWishList}
-                  style={{ cursor: "pointer" }}
-                  className="fa fa-heart-o"
-                  aria-hidden="true"
-                />
-              )}
-            </div>}
+            {user && (
+              <div className="heart_button">
+                {fav && (
+                  <i
+                    onClick={removeFromWishList}
+                    style={{ cursor: "pointer" }}
+                    className="fa fa-heart"
+                    aria-hidden="true"
+                  />
+                )}
+                {notFav && (
+                  <i
+                    onClick={addToWishList}
+                    style={{ cursor: "pointer" }}
+                    className="fa fa-heart-o"
+                    aria-hidden="true"
+                  />
+                )}
+              </div>
+            )}
             {product.admirers?.length > 1 && (
               <div className="interest">
                 {product.admirers?.length || 0} People are interested in this

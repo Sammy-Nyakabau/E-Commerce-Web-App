@@ -6,8 +6,6 @@ import { useStateValue } from "../providers/StateProvider";
 
 function Wishlist() {
   const [{ wishlist, basket}] = useStateValue();
-    console.log(wishlist)
-    console.log(basket)
 
   return (
     <div className="wishlistt">

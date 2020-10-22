@@ -1,6 +1,7 @@
 /* eslint-disable */
 import React, { useState } from "react";
 import "../styles/Login.css";
+import { toast } from "react-toastify";   
 import { login } from "../services/authService";
 import { getBasket } from "../services/basketService";
 import { getWishlist } from "../services/wishlistService";
@@ -23,6 +24,15 @@ function Login() {
 
       if (user) {
         // the user just logged in / the user was logged in
+        toast.info(`Hello ${user.username}, you are logged in`, {
+          position: "bottom-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          });
 
         dispatch({
           type: "SET_USER",
@@ -60,11 +70,21 @@ function Login() {
             items: wishlistProducts,
           });
         }
+        
         history.push("/");
       }
     } catch (ex) {
-      if (ex.response && ex.response.status === 400) {
-        console.log(ex);
+      if (ex.response && ex.response.status >= 400) {
+        toast.error('Invalid Username or Password!', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          });
+        console.log("error");
       }
     }
   };

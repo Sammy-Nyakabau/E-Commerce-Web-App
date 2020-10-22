@@ -1,6 +1,7 @@
 /* eslint-disable */
 import React from "react";
 import "./Checkout.css";
+import { toast } from "react-toastify";   
 import Subtotal from "./Subtotal";
 import CheckoutProduct from "./components/CheckoutProduct";
 import { useStateValue } from "./providers/StateProvider";

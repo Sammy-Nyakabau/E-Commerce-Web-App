@@ -1,5 +1,7 @@
+/* eslint-disable */
 import React, { useState, useEffect } from "react";
 import "./Order_page.css";
+import { toast } from "react-toastify";   
 import { useStateValue } from "../providers/StateProvider";
 import { getMyOrders } from "../services/ordersService";
 import Order_component from "./Order_component";
@@ -11,13 +13,25 @@ function Order_page() {
 
   useEffect(() => {
     async function getOrders() {
-      const { data: userOrders } = await getMyOrders(user._id);
-      userOrders.forEach((order) => {
-        order.orderItems.forEach((prod) => {
-          orderedProducts.push(prod);
+      if (user) {
+        const { data: userOrders } = await getMyOrders(user._id);
+        userOrders.forEach((order) => {
+          order.orderItems.forEach((prod) => {
+            orderedProducts.push(prod);
+          });
         });
-      });
-      setproducts(orderedProducts);
+        setproducts(orderedProducts);
+      }else{
+        toast.info('Log in to see your orders!', {
+          position: "bottom-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          });
+      }
     }
     getOrders();
   }, []);

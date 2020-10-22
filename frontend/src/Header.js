@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState } from "react";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
@@ -28,6 +29,7 @@ function Header() {
         rating: product.rating,
       });
     });
+    console.log(basket)
     wishlist.forEach((product) => {
       wishes.push({
         product: product._id,
@@ -39,13 +41,13 @@ function Header() {
         rating: product.rating,
       });
     });
-    if (wishlist.length > 0) {
-      await deleteWishlist(user._id)
+
+      // await deleteWishlist(user._id)
       await addWishlist(user._id, wishes);
-    }
-    if (basket.length > 0) {
+    
+    
       await addBasket(user._id, items);
-    }
+    
     await logout();
   };
 

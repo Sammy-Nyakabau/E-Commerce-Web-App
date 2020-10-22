@@ -1,6 +1,8 @@
+/* eslint-disable */
 import React from "react";
 import "./Subtotal.css";
 import _ from "lodash";
+import { toast } from "react-toastify";   
 import CurrencyFormat from "react-currency-format";
 import { useStateValue } from "./providers/StateProvider";
 import { getBasketTotal } from "./providers/reducer";
@@ -15,6 +17,15 @@ function Subtotal() {
 
   const makeOrder = async () => {
     let orders = [];
+    toast.success('Order Has been placed!', {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      });
     basket.forEach((product) => {
 
       orders.push(

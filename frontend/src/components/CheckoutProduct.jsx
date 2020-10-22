@@ -15,7 +15,7 @@ function CheckoutProduct(props) {
       type: "REMOVE_FROM_BASKET",
       id: product.id,
     });
-    toast.info('Item removed from basket!', {
+    toast.warn('Item removed from basket!', {
       position: "bottom-center",
       autoClose: 5000,
       hideProgressBar: false,
@@ -28,13 +28,25 @@ function CheckoutProduct(props) {
   const saveForLater = () => {
     //Add item to wishlist...
     if (wishlist.some((prod) => prod.name === product.name)) {
-      removeFromBasket();
+      dispatch({
+        type: "REMOVE_FROM_BASKET",
+        id: product.id,
+      });
     } else {
       dispatch({
         type: "ADD_TO_WISHLIST",
         item: product,
       });
       removeFromBasket();
+      toast.info('Item added to wishlist!', {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
     }
   };
   return (

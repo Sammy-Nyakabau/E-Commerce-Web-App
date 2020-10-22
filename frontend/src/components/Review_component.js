@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import Reviewdisplaypage from "./Reviewdisplaypage";
 import "./Review_component.css";

@@ -2,6 +2,7 @@
 import React from "react";
 import CurrencyFormat from "react-currency-format";
 import "./Product_component.css";
+import { toast } from "react-toastify";   
 import { useStateValue } from "../providers/StateProvider";
 
 function WishlistProduct(props) {
@@ -14,6 +15,15 @@ function WishlistProduct(props) {
       type: "REMOVE_FROM_WISHLIST",
       id: product.id,
     });
+    toast.warn('Removed from wishlist!', {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      });
   };
   const addtobasket = () => {
     //Add item to basket...
@@ -21,7 +31,19 @@ function WishlistProduct(props) {
       type: "ADD_TO_BASKET",
       item: product,
     });
-    removefromwishlist()
+    dispatch({
+      type: "REMOVE_FROM_WISHLIST",
+      id: product.id,
+    });
+    toast.info('Added to basket!', {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      });
   };
   return (
     <div className="col s6">

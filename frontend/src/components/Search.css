@@ -11,6 +11,16 @@
     top: 350px;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: large;
+  }
+  .search__results {
+    text-align: center;
+    color: white;
+    position: absolute;
+    left: 46%;
+    top: 415px;
+    margin-bottom: 8px;
   }
   .shop {
     background-color: black;

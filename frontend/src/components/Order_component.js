@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import CurrencyFormat from "react-currency-format";
 import "./Order_component.css";
+import { toast } from "react-toastify";   
 import { useStateValue } from "../providers/StateProvider";
 import { useHistory } from "react-router-dom";
 import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
@@ -17,7 +18,15 @@ function Order_component(props) {
       type: "ADD_TO_BASKET",
       item: product,
     });
-    
+    toast.info('Item added to basket!', {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      });
     
   };
 

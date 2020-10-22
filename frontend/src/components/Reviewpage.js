@@ -1,6 +1,8 @@
+/* eslint-disable */
 import React, { useState } from "react";
 import "./Reviewpage.css";
 import { useHistory } from "react-router-dom";
+import { toast } from "react-toastify";   
 import { addReview, getReviews } from "../services/reviewsService";
 import { getMyOrders, updateOrders } from "../services/ordersService";
 import { updateProduct } from "../services/productService";
@@ -62,7 +64,7 @@ function Reviewpage() {
       let ratings = [];
       const { data: reviews } = await getReviews(item.product);
       let numberOfReviews = reviews.length;
-
+        
       reviews.forEach((review) => {
         ratings.push(review.review.rating);
       });
@@ -75,8 +77,15 @@ function Reviewpage() {
         averageRatings
       );
 
-      console.log(updated)
-
+      toast.success('Your review has been saved!', {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
       history.push("/shop")
     } catch (error) {
       console.log(error);
