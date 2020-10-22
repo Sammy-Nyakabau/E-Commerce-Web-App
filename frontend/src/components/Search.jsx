@@ -5,11 +5,6 @@ import "./Search.css";
 import ProductList from "./ProductList";
 import { getProducts } from "../services/productService";
 import "./grid.css";
-<<<<<<< HEAD
-=======
-import { makeStyles } from "@material-ui/core/styles";
-import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
->>>>>>> c0c8e1a3695b9a2ce7a35a19e87d65037d211d61
 
 class Search extends Component {
   state = {
