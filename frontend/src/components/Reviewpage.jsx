@@ -1,15 +1,15 @@
 /* eslint-disable */
 import React, { useState } from "react";
-import "./Reviewpage.css";
 import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";   
-import { addReview, getReviews } from "../services/reviewsService";
-import { getMyOrders, updateOrders } from "../services/ordersService";
-import { updateProduct } from "../services/productService";
-import { useStateValue } from "../providers/StateProvider";
 import { makeStyles } from "@material-ui/core/styles";
 import Rating from "@material-ui/lab/Rating";
 import Box from "@material-ui/core/Box";
+import { addReview, getReviews } from "../services/reviewsService";
+import { getMyOrders } from "../services/ordersService";
+import { updateProduct } from "../services/productService";
+import { useStateValue } from "../providers/StateProvider";
+import "../styles/Reviewpage.css";
 
 const labels = {
   1: "Useless",
@@ -33,8 +33,8 @@ function Reviewpage() {
   const [comment, setComment] = useState("");
 
 
-  const [value, setValue] = React.useState(2);
-  const [hover, setHover] = React.useState(-1);
+  const [value, setValue] = useState(2);
+  const [hover, setHover] = useState(-1);
   const classes = useStyles();
 
   const createReview = async (e) => {
@@ -55,7 +55,7 @@ function Reviewpage() {
     try {
 
       const review = { user_name: user.username, rating: value, comment };
-      const { data: createdReview } = await addReview(
+      await addReview(
         item.product,
         review,
         verified
@@ -71,7 +71,7 @@ function Reviewpage() {
 
       let averageRatings = Math.floor(ratings.reduce((a, b) => a + b) / ratings.length);
 
-      const { data: updated } = await updateProduct(
+      await updateProduct(
         item.product,
         numberOfReviews,
         averageRatings

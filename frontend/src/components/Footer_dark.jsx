@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React from 'react'
-import "./Footer_dark.css"
+import "../styles/Footer_dark.css"
 
 function Footer() {
     return (

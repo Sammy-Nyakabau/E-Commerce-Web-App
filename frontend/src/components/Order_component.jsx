@@ -1,11 +1,11 @@
 /* eslint-disable */
-import React, { useState, useEffect } from "react";
-import CurrencyFormat from "react-currency-format";
-import "./Order_component.css";
-import { toast } from "react-toastify";   
-import { useStateValue } from "../providers/StateProvider";
+import React from "react";
 import { useHistory } from "react-router-dom";
+import CurrencyFormat from "react-currency-format";
+import { toast } from "react-toastify";
 import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
+import { useStateValue } from "../providers/StateProvider";
+import "../styles/Order_component.css";
 
 function Order_component(props) {
   const history = useHistory();
@@ -18,7 +18,7 @@ function Order_component(props) {
       type: "ADD_TO_BASKET",
       item: product,
     });
-    toast.info('Item added to basket!', {
+    toast.info("Item added to basket!", {
       position: "bottom-center",
       autoClose: 5000,
       hideProgressBar: false,
@@ -26,17 +26,15 @@ function Order_component(props) {
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      });
-    
+    });
   };
 
   const addReview = () => {
-    console.log(product._id)
     dispatch({
       type: "SET_ITEM",
       item: product,
     });
-    history.push("/reviewpage")
+    history.push("/reviewpage");
   };
 
   return (
@@ -68,7 +66,7 @@ function Order_component(props) {
             className="reviewpart"
           >
             <div className="see_reviews">Add Review</div>{" "}
-            <div  className="review_arrow">
+            <div className="review_arrow">
               <ArrowRightAltIcon />
             </div>
           </div>

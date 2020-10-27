@@ -1,28 +1,27 @@
 /* eslint-disable */
-import React, { useEffect } from "react";
-import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import Header from "./Header";
-import Home from "./Home";
-import Footer from "./Footer";
-import Footer_dark from "./Footer_dark";
+import Header from "./components/Header";
+import Home from "./components/Home";
+import Footer from "./components/Footer";
+import Footer_dark from "./components/Footer_dark";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Shop from "./components/Shop";
 import Search from "./components/Search";
 import Wishlist from "./components/Wishlist";
-import Checkout from "./Checkout";
+import Checkout from "./components/Checkout";
 import Shop_helicopters from "./components/Shop_helicopters";
 import Shop_aircrafts from "./components/Shop_aircrafts";
 import Shop_jetLiners from "./components/Shop_jetliners";
 import Shop_unmannedAerialSystems from "./components/Shop_unmannedAerialSystems";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import User_page from "./User_page";
+import User_page from "./components/User_page";
 import Order_page from "./components/Order_page";
 import Reviewpage from "./components/Reviewpage";
 import Reviewdisplaypage from "./components/Reviewdisplaypage";
 import "react-toastify/dist/ReactToastify.css";
-// import User from "./User";
+import "./styles/App.css";
 
 function App() {
   return (

@@ -1,10 +1,10 @@
 /* eslint-disable */
 import React, { useState } from "react";
-import "../styles/Login.css";
+import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";   
 import { register} from "../services/authService";
-import { useHistory } from "react-router-dom";
 import { useStateValue } from "../providers/StateProvider";
+import "../styles/Login.css";
 
 
 function Register() {

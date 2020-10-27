@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "font-awesome/css/font-awesome.css";
 import { BrowserRouter } from "react-router-dom";
-import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { StateProvider } from './providers/StateProvider';
 import reducer, { initialState } from './providers/reducer';
+import "./styles/index.css";
+import "font-awesome/css/font-awesome.css";
 
 ReactDOM.render(
   <BrowserRouter>

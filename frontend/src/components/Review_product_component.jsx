@@ -1,13 +1,11 @@
 /* eslint-disable */
-import React, { useState, useEffect } from "react";
+import React from "react";
 import CurrencyFormat from "react-currency-format";
-import "./Review_product_component.css";
-
+import "../styles/Review_product_component.css";
 
 function Review_product_component(props) {
   let { product } = props;
  
-
   return (
     <div className="col s12">
       <div className="review_product_comp">

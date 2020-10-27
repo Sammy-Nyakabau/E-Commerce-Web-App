@@ -1,14 +1,13 @@
 /* eslint-disable */
 import React from "react";
-import "./Subtotal.css";
-import _ from "lodash";
-import { toast } from "react-toastify";   
-import CurrencyFormat from "react-currency-format";
-import { useStateValue } from "./providers/StateProvider";
-import { getBasketTotal } from "./providers/reducer";
-import { createOrder } from "./services/ordersService";
-import { deleteBasket } from "./services/basketService";
 import { useHistory } from "react-router-dom";
+import CurrencyFormat from "react-currency-format";
+import { toast } from "react-toastify";   
+import { useStateValue } from "../providers/StateProvider";
+import { getBasketTotal } from "../providers/reducer";
+import { createOrder } from "../services/ordersService";
+import { deleteBasket } from "../services/basketService";
+import "../styles/Subtotal.css";
 
 
 function Subtotal() {

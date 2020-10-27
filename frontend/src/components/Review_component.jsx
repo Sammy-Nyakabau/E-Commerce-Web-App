@@ -1,8 +1,7 @@
 /* eslint-disable */
 import React from "react";
-import Reviewdisplaypage from "./Reviewdisplaypage";
-import "./Review_component.css";
 import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
+import "../styles/Review_component.css";
 
 function Review_component(props) {
   let { review } = props;

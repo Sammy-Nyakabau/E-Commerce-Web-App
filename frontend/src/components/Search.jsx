@@ -1,13 +1,12 @@
 /* eslint-disable */
 import React, { Component } from "react";
 import _ from "lodash";
-import "./Search.css";
 import ProductList from "./ProductList";
-import { getProducts } from "../services/productService";
-import "./grid.css";
-import { makeStyles } from "@material-ui/core/styles";
 import ArrowDropUpIcon from "@material-ui/icons/ArrowDropUp";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
+import { getProducts } from "../services/productService";
+import "../styles/grid.css";
+import "../styles/Search.css";
 
 class Search extends Component {
   state = {
@@ -22,7 +21,6 @@ class Search extends Component {
     this.setState({
       products,
     });
-    console.log(this.state.products);
   }
 
   handleSearch = (query) => {

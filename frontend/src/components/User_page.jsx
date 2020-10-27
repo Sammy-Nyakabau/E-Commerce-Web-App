@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import "./User_page.css";
-import { useStateValue } from "./providers/StateProvider";
-import { updateUser } from "./services/userService";
 import { useHistory } from "react-router-dom";
+import { toast } from "react-toastify";   
+import { useStateValue } from "../providers/StateProvider";
+import { updateUser } from "../services/userService";
+import "../styles/User_page.css";
 
 function User_page() {
   const history = useHistory();
@@ -26,7 +27,16 @@ function User_page() {
         country,
       });
       console.log(updated);
-      history.push("/")
+      toast.success('Your information has been updated!', {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+      history.push("/");
       dispatch({
         type: "SET_USER",
         user: updated,
@@ -39,10 +49,7 @@ function User_page() {
   return (
     <div className="user_page">
       <div className="user_banner">
-        <img
-          alt=""
-          src="https://i.pinimg.com/originals/d6/62/34/d662349ca14d7c76a82e11a3be958b25.jpg"
-        />
+        <img alt="" src="https://i.ibb.co/kKf46cy/Form-Background.jpg" />
         <div className="user_banner_heading">
           <h1>USER DETAILS</h1>
         </div>

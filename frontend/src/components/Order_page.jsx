@@ -1,18 +1,18 @@
 /* eslint-disable */
 import React, { useState, useEffect } from "react";
-import "./Order_page.css";
-import { toast } from "react-toastify";   
+import { toast } from "react-toastify";
 import { useStateValue } from "../providers/StateProvider";
 import { getMyOrders } from "../services/ordersService";
 import Order_component from "./Order_component";
+import "../styles/Order_page.css";
 
 function Order_page() {
-  const [{ user }, dispatch] = useStateValue();
+  const [{ user }] = useStateValue();
   const [products, setproducts] = useState([]); //this stores all ordered products
   let orderedProducts = [];
 
   useEffect(() => {
-    async function getOrders() {
+    async function fetchOrders() {
       if (user) {
         const { data: userOrders } = await getMyOrders(user._id);
         userOrders.forEach((order) => {
@@ -21,8 +21,8 @@ function Order_page() {
           });
         });
         setproducts(orderedProducts);
-      }else{
-        toast.info('Log in to see your orders!', {
+      } else {
+        toast.info("Log in to see your orders!", {
           position: "bottom-center",
           autoClose: 5000,
           hideProgressBar: false,
@@ -30,10 +30,10 @@ function Order_page() {
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-          });
+        });
       }
     }
-    getOrders();
+    fetchOrders();
   }, []);
 
   //products array stores all the ordered products by the logged in user

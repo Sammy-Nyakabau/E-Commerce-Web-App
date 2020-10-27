@@ -16,8 +16,4 @@ class ProductList_unmannedAerialSystems extends React.Component {
   }
 }
 
-// ProductList.defaultProps = {
-//   products: []
-// };
-
 export default ProductList_unmannedAerialSystems;

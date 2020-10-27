@@ -2,12 +2,12 @@
 import React from "react";
 import Product_component from "./Product_component";
 
-class ProductList_helicopters extends React.Component {
+class ProductList_jetLiners extends React.Component {
   render() {
     return (
       <div className="home">
           <div className="row">
-            {this.props.helicopters.map((product) => (
+            {this.props.jetLiners.map((product) => (
               <Product_component key={product.id} product={product} />
             ))}
           </div>
@@ -16,8 +16,4 @@ class ProductList_helicopters extends React.Component {
   }
 }
 
-// ProductList.defaultProps = {
-//   products: []
-// };
-
-export default ProductList_helicopters;
+export default ProductList_jetLiners;

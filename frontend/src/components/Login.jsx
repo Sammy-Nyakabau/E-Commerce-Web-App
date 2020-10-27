@@ -1,13 +1,12 @@
 /* eslint-disable */
 import React, { useState } from "react";
-import "../styles/Login.css";
-import { toast } from "react-toastify";   
+import { Link, useHistory } from "react-router-dom";
+import { toast } from "react-toastify";
 import { login } from "../services/authService";
 import { getBasket } from "../services/basketService";
 import { getWishlist } from "../services/wishlistService";
-import { useHistory } from "react-router-dom";
 import { useStateValue } from "../providers/StateProvider";
-import { Link } from "react-router-dom";
+import "../styles/Login.css";
 
 function Login() {
   const history = useHistory();
@@ -32,7 +31,7 @@ function Login() {
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-          });
+        });
 
         dispatch({
           type: "SET_USER",
@@ -61,21 +60,23 @@ function Login() {
         let wishlistProducts = [];
         const { data: userWishlist } = await getWishlist(user._id);
         if (userWishlist.length !== 0) {
-          userWishlist[userWishlist.length - 1].wishlistItems.forEach((prod) => {
-            wishlistProducts.push(prod);
-          });
+          userWishlist[userWishlist.length - 1].wishlistItems.forEach(
+            (prod) => {
+              wishlistProducts.push(prod);
+            }
+          );
           console.log(wishlistProducts);
           dispatch({
             type: "SET_WISHLIST",
             items: wishlistProducts,
           });
         }
-        
+
         history.push("/");
       }
     } catch (ex) {
       if (ex.response && ex.response.status >= 400) {
-        toast.error('Invalid Username or Password!', {
+        toast.error("Invalid Username or Password!", {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -83,7 +84,7 @@ function Login() {
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-          });
+        });
         console.log("error");
       }
     }

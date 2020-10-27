@@ -1,9 +1,9 @@
 /* eslint-disable */
 import React from "react";
 import CurrencyFormat from "react-currency-format";
-import "./Product_component.css";
 import { toast } from "react-toastify";    
 import { useStateValue } from "../providers/StateProvider";
+import "../styles/Product_component.css";
 
 function CheckoutProduct(props) {
   let { product } = props;

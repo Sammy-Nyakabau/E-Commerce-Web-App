@@ -1,10 +1,10 @@
 /* eslint-disable */
 import React, { useState, useEffect } from "react";
-import "./Reviewdisplaypage.css";
-import {  getReviews } from "../services/reviewsService";
-import { useStateValue } from "../providers/StateProvider";
 import Review_component from "./Review_component";
 import Review_product_component from "./Review_product_component";
+import {  getReviews } from "../services/reviewsService";
+import { useStateValue } from "../providers/StateProvider";
+import "../styles/Reviewdisplaypage.css";
 
 function Reviewdisplaypage() {
   const [{ item }] = useStateValue();
@@ -21,7 +21,7 @@ function Reviewdisplaypage() {
   return (
     <div className="reviewdisplay">
       <div className="reviewdisplay_banner">
-        <img alt="" src="https://static01.nyt.com/images/2019/10/24/business/00boeing-lobbying2/00boeing-lobbying2-videoSixteenByNineJumbo1600-v2.jpg" />
+        <img alt="" src="https://i.ibb.co/mGNYTc5/Reviews.jpg" />
         <div className="reviewdisplay_heading">
           <h1>PRODUCT REVIEWS</h1>
         </div>

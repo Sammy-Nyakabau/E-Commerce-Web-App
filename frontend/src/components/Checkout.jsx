@@ -1,18 +1,17 @@
 /* eslint-disable */
 import React from "react";
-import "./Checkout.css";
-import { toast } from "react-toastify";   
+import { useStateValue } from "../providers/StateProvider";
 import Subtotal from "./Subtotal";
-import CheckoutProduct from "./components/CheckoutProduct";
-import { useStateValue } from "./providers/StateProvider";
+import CheckoutProduct from "./CheckoutProduct";
+import "../styles/Checkout.css";
 
 function Checkout() {
-  const [{ basket, user }] = useStateValue();
+  const [{ basket }] = useStateValue();
 
   return (
     <div className="Checkout">
       <div className="checkout_banner">
-        <img src="https://www.ghafari.com/uploads/photos/Turkish-LMH-1-Hero.jpg" />
+        <img src="https://i.ibb.co/3s4Jk6Z/Checkout-Banner.jpg" />
         <div className="checkout_banner_heading">
           <h1>YOUR HANGER</h1>
         </div>

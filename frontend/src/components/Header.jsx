@@ -1,15 +1,15 @@
 /* eslint-disable */
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import PersonIcon from "@material-ui/icons/Person";
 import FavoriteIcon from "@material-ui/icons/Favorite";
-import "./Header.css";
-import { Link } from "react-router-dom";
-import { useStateValue } from "./providers/StateProvider";
-import { logout } from "./services/authService";
-import { addWishlist, deleteWishlist } from "./services/wishlistService";
-import { addBasket } from "./services/basketService";
+import { useStateValue } from "../providers/StateProvider";
+import { logout } from "../services/authService";
+import { addWishlist } from "../services/wishlistService";
+import { addBasket } from "../services/basketService";
+import "../styles/Header.css";
 
 function Header() {
   const [header, setHeader] = useState(false);
@@ -29,7 +29,6 @@ function Header() {
         rating: product.rating,
       });
     });
-    console.log(basket)
     wishlist.forEach((product) => {
       wishes.push({
         product: product._id,
@@ -42,12 +41,9 @@ function Header() {
       });
     });
 
-      // await deleteWishlist(user._id)
-      await addWishlist(user._id, wishes);
-    
-    
-      await addBasket(user._id, items);
-    
+    await addWishlist(user._id, wishes);
+    await addBasket(user._id, items);
+
     await logout();
   };
 

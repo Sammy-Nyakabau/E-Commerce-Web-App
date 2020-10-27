@@ -1,12 +1,13 @@
 /* eslint-disable */
 import React, { useState, useEffect } from "react";
-import CurrencyFormat from "react-currency-format";
-import "./Product_component.css";
-import { toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
+import CurrencyFormat from "react-currency-format";
+import { toast } from "react-toastify";
+import AOS from "aos";
+import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
 import { useStateValue } from "../providers/StateProvider";
 import { updateInterested } from "../services/productService";
-import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
+import "../styles/Product_component.css";
 
 function Product_component(props) {
   const history = useHistory();
@@ -20,6 +21,9 @@ function Product_component(props) {
       setFav(true);
       setNotfav(false);
     }
+      AOS.init({
+        duration: 3000,
+      });
   }, []);
 
   const addToBasket = () => {
@@ -44,7 +48,7 @@ function Product_component(props) {
       type: "ADD_TO_WISHLIST",
       item: product,
     });
-    const { data: update } = await updateInterested(product._id, {
+    await updateInterested(product._id, {
       user: user.name,
     });
     setFav(true);
@@ -85,9 +89,9 @@ function Product_component(props) {
       progress: undefined,
     });
   };
-  
+
   return (
-    <div className="col s6">
+    <div data-aos="fade-down" className="col s6">
       <div className="product_comp">
         <div className="product_info">
           <p className="product_name">{product.name}</p>

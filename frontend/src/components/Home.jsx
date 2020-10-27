@@ -1,16 +1,28 @@
 /* eslint-disable */
-import React from "react";
-import "./Home.css";
-import Categories from "./home_components/Categories";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import Categories from "./Categories";
+import "aos/dist/aos.css";
+import "../styles/Home.css";
 
 function Home() {
+  useEffect(() => {
+    AOS.init({
+      duration: 3000,
+    });
+  }, []);
+
   return (
     <div className="homepage">
       <div className="home__container">
         <div className="banner">
-          <img src="https://www.leonardocompany.com/o/adaptive-media/image/10059482/h_703/Banner%20Aria%201440x760.jpg?t=1583315858025" />
-          <div className="banner__words">
+          <img src="https://i.ibb.co/cr1MryD/Banner-Aria-1440x760.jpg" />
+          <div
+            data-aos="fade-up"
+            data-aos-once="false"
+            className="banner__words"
+          >
             <h2>Air: flying solutions for multiple missions</h2>
             <Link to="/shop">
               <button>
