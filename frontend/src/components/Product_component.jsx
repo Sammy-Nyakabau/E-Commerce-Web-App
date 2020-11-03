@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import CurrencyFormat from "react-currency-format";
 import { toast } from "react-toastify";
-import AOS from "aos";
 import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
 import { useStateValue } from "../providers/StateProvider";
 import { updateInterested } from "../services/productService";
@@ -21,9 +20,6 @@ function Product_component(props) {
       setFav(true);
       setNotfav(false);
     }
-      AOS.init({
-        duration: 3000,
-      });
   }, []);
 
   const addToBasket = () => {
@@ -91,7 +87,7 @@ function Product_component(props) {
   };
 
   return (
-    <div data-aos="fade-down" className="col s6">
+    <div className="col s6">
       <div className="product_comp">
         <div className="product_info">
           <p className="product_name">{product.name}</p>

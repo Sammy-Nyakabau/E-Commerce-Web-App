@@ -83,7 +83,7 @@ class Search extends Component {
     let filtered = allProducts;
     if (searchQuery)
       filtered = allProducts.filter((p) =>
-        p.name.toLowerCase().startsWith(searchQuery.toLowerCase())
+        p.name.toLowerCase().includes(searchQuery.toLowerCase())
       );
 
     filtered = _.orderBy(filtered, [sortColumn.path], [sortColumn.order]);
