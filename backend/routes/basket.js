@@ -11,19 +11,14 @@ router.post("/", async (req, res) => {
     basketItems,
   } = req.body;
 
-  if (basketItems && basketItems.length === 0) {
-    res.status(400);
-    throw new Error("No basket items");
-  } else {
-    const basket = new Basket({
-      user, //ONLY FOR TESTING => SHOULD BE user: req.user._id
-      basketItems,
-    });
+  const basket = new Basket({
+    user, //ONLY FOR TESTING => SHOULD BE user: req.user._id
+    basketItems,
+  });
 
-    const createdBasket = await basket.save();
+  const createdBasket = await basket.save();
 
-    res.status(201).json(createdBasket);
-  }
+  res.status(201).json(createdBasket);
 });
 
 // @desc    Get logged in user orders

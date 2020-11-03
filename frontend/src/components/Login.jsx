@@ -51,12 +51,12 @@ function Login() {
           userBasket[userBasket.length - 1].basketItems.forEach((prod) => {
             basketProducts.push(prod);
           });
+        }
           console.log(basketProducts);
           dispatch({
             type: "SET_BASKET",
             items: basketProducts,
           });
-        }
         let wishlistProducts = [];
         const { data: userWishlist } = await getWishlist(user._id);
         if (userWishlist.length !== 0) {
@@ -65,12 +65,12 @@ function Login() {
               wishlistProducts.push(prod);
             }
           );
+        }
           console.log(wishlistProducts);
           dispatch({
             type: "SET_WISHLIST",
             items: wishlistProducts,
           });
-        }
 
         history.push("/");
       }

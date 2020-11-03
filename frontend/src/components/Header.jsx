@@ -42,9 +42,9 @@ function Header() {
     });
 
     await addWishlist(user._id, wishes);
-    await addBasket(user._id, items);
-
-    await logout();
+    const {data: res} = await addBasket(user._id, items);
+    console.log(res);
+    // await logout();
   };
 
   const changeBackground = () => {

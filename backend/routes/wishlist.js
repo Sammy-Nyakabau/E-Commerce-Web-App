@@ -11,19 +11,14 @@ router.post("/", async (req, res) => {
     wishlistItems,
   } = req.body;
 
-  if (wishlistItems && wishlistItems.length === 0) {
-    res.status(400);
-    throw new Error("No wishlist items");
-  } else {
-    const wishlist = new Wishlist({
-      user, //ONLY FOR TESTING => SHOULD BE user: req.user._id
-      wishlistItems,
-    });
+  const wishlist = new Wishlist({
+    user, //ONLY FOR TESTING => SHOULD BE user: req.user._id
+    wishlistItems,
+  });
 
-    const createdWishlist = await wishlist.save();
+  const createdWishlist = await wishlist.save();
 
-    res.status(201).json(createdWishlist);
-  }
+  res.status(201).json(createdWishlist);
 });
 
 // @desc    Get logged in user orders
@@ -35,12 +30,11 @@ router.get("/mywishlist/:id", async (req, res) => {
   res.json(wishlist);
 });
 
-
 router.delete("/:user", async (req, res) => {
-    const { user } = req.params;
-    const wishlist = await Wishlist.deleteMany({ user });
-  
-    res.send(wishlist);
-  });
+  const { user } = req.params;
+  const wishlist = await Wishlist.deleteMany({ user });
+
+  res.send(wishlist);
+});
 
 module.exports = router;
