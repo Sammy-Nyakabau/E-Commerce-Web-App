@@ -6,7 +6,6 @@ import { toast } from "react-toastify";
 import { useStateValue } from "../providers/StateProvider";
 import { getBasketTotal } from "../providers/reducer";
 import { createOrder } from "../services/ordersService";
-import { deleteBasket } from "../services/basketService";
 import "../styles/Subtotal.css";
 
 
@@ -41,7 +40,6 @@ function Subtotal() {
     });
 
     await createOrder(user._id, orders);
-    await deleteBasket(user._id)
     dispatch({
       type: "EMPTY_BASKET",
     });

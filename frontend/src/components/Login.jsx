@@ -37,14 +37,7 @@ function Login() {
           type: "SET_USER",
           user: user,
         });
-      } else {
-        // the user is logged out
-        dispatch({
-          type: "SET_USER",
-          user: null,
-        });
-      }
-      if (user) {
+
         let basketProducts = [];
         const { data: userBasket } = await getBasket(user._id);
         if (userBasket.length !== 0) {
@@ -52,11 +45,11 @@ function Login() {
             basketProducts.push(prod);
           });
         }
-          console.log(basketProducts);
-          dispatch({
-            type: "SET_BASKET",
-            items: basketProducts,
-          });
+        console.log(userBasket);
+        dispatch({
+          type: "SET_BASKET",
+          items: basketProducts,
+        });
         let wishlistProducts = [];
         const { data: userWishlist } = await getWishlist(user._id);
         if (userWishlist.length !== 0) {
@@ -66,13 +59,19 @@ function Login() {
             }
           );
         }
-          console.log(wishlistProducts);
-          dispatch({
-            type: "SET_WISHLIST",
-            items: wishlistProducts,
-          });
+        console.log(wishlistProducts);
+        dispatch({
+          type: "SET_WISHLIST",
+          items: wishlistProducts,
+        });
 
         history.push("/");
+      } else {
+        // the user is logged out
+        dispatch({
+          type: "SET_USER",
+          user: null,
+        });
       }
     } catch (ex) {
       if (ex.response && ex.response.status >= 400) {

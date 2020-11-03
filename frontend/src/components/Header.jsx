@@ -6,14 +6,13 @@ import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import PersonIcon from "@material-ui/icons/Person";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import { useStateValue } from "../providers/StateProvider";
-import { logout } from "../services/authService";
 import { addWishlist } from "../services/wishlistService";
 import { addBasket } from "../services/basketService";
 import "../styles/Header.css";
 
 function Header() {
   const [header, setHeader] = useState(false);
-  const [{ basket, wishlist, user }] = useStateValue();
+  const [{ basket, wishlist, user }, dispatch] = useStateValue();
 
   const Logout = async () => {
     let items = [];
@@ -42,9 +41,19 @@ function Header() {
     });
 
     await addWishlist(user._id, wishes);
-    const {data: res} = await addBasket(user._id, items);
-    console.log(res);
-    // await logout();
+    await addBasket(user._id, items);
+      
+
+    dispatch({
+      type: "SET_USER",
+      user: null,
+    });
+    dispatch({
+      type: "EMPTY_BASKET",
+    });
+    dispatch({
+      type: "EMPTY_WISHLIST", 
+    });
   };
 
   const changeBackground = () => {
@@ -104,11 +113,11 @@ function Header() {
           </li>
           <li>
             {user ? (
-              <a href="/">
+              <Link to="/">
                 <span className="header__text" onClick={Logout}>
                   LOGOUT
                 </span>
-              </a>
+              </Link>
             ) : (
               <Link to="/login">
                 <span className="header__text">LOGIN</span>
